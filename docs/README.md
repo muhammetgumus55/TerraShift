@@ -12,6 +12,7 @@ Start with the [project README](../README.md). This page lists every document an
 | [SOURCES.md](SOURCES.md) | TR/EN | every number with its source, link and access date | Muhammet |
 | [GUBRE.md](GUBRE.md) | TR | fertiliser, sowing and soil-health method and sources | Gümüş |
 | [AI_USE.md](AI_USE.md) | TR | which AI tool was used for what, per person | everyone |
+| [research/](research/fertilizer-sowing-soil-health-report.md) | TR | background research behind the fertiliser, sowing and soil-health cards (report + notes) | Gümüş |
 
 ## Technical
 
@@ -34,6 +35,6 @@ These are internal working notes kept during the hackathon. They are kept for tr
 | Document | Contents |
 |---|---|
 | [../TASKS.md](../TASKS.md) | task list per person |
-| [STATUS.md](STATUS.md) | one line per milestone per person |
+| [STATUS.md](STATUS.md) | milestone check-in template from the hackathon plan (current status is in the project README) |
 | [team/](team/) | role guides (engine, data, web, research) |
 | [GUMUS_BAKMALI.md](GUMUS_BAKMALI.md), [OMER_BAKMALI.md](OMER_BAKMALI.md), [ISMAIL_BAKMALI.md](ISMAIL_BAKMALI.md) | hand-over notes between team members |

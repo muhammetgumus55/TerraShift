@@ -1,7 +1,7 @@
 # Owner: Gümüş (Rol B). "Nasıl ekilir" rules for the browser (web/src/lib/sowing.ts). docs/GUBRE.md §9.
 # Exported as web/public/data/sowing.json (keys starting with "_" are dropped; annual precipitation per
 # district is copied from references.yaml → mgm_annual_precip_mm).
-# Source research: reports/İç Anadolu gübre ekim toprak sağlığı.md (15 Nov 2026), notes sowing_practices.md.
+# Source research: docs/research/fertilizer-sowing-soil-health-report.md (15 Nov 2026), notes docs/research/notes/sowing_practices.md.
 # Every number is a range object R (min, max, unit, source, source_url, type, verified); verified: true only
 # where the number was read on the source page. No money. No crop-specific code: a crop differs only by its entry.
 #
@@ -50,7 +50,7 @@ nearest_window_note:
   districts: [develi, polatli, eskisehir, gemerek, bogazliyan, kaman, kirikkale, cankiri, nevsehir, nigde]
   type: assumption
   verified: false
-  source: "Araştırma: Sivas-Gemerek, Yozgat-Boğazlıyan, Kayseri, Eskişehir ve Ankara için il penceresi bulunamadı (reports/İç Anadolu gübre ekim toprak sağlığı.md)"
+  source: "Araştırma: Sivas-Gemerek, Yozgat-Boğazlıyan, Kayseri, Eskişehir ve Ankara için il penceresi bulunamadı (docs/research/fertilizer-sowing-soil-health-report.md)"
 cold_districts:
   ids: [gemerek, bogazliyan, develi]
   text:

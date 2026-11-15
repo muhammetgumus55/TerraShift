@@ -1,6 +1,6 @@
 # Owner: Gümüş (Rol B). Soil-health card rules for the browser (web/src/lib/soilhealth.ts). docs/GUBRE.md §10.
 # Exported as web/public/data/soil_health.json (keys starting with "_" are dropped).
-# Source research: reports/İç Anadolu gübre ekim toprak sağlığı.md (15 Nov 2026), notes soil_health_practices.md.
+# Source research: docs/research/fertilizer-sowing-soil-health-report.md (15 Nov 2026), notes docs/research/notes/soil_health_practices.md.
 # Practices are listed strongest evidence first; each has evidence lines with their own source and badge.
 # Wording rules (AGENTS.md): no money (fines and support amounts are never shown), never "kesin", "mutlaka",
 # "yasak", "garanti". Organic-matter gain per year is NOT given: no regional measurement exists.
