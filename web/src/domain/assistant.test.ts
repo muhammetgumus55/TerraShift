@@ -24,6 +24,7 @@ describe('ask the farmer', () => {
     expect(answer('neden bu öneri', ctx, t).text).toContain('kazanç');
     expect(answer('başka ne ekebilirim', ctx, t).text).toContain('Mercimek');
     expect(answer('mercimek ekebilir miyim', ctx, t).text).toContain('daha az uygun');
+    expect(answer('Neden nohut?', ctx, t).text).toContain('kazanç');
   });
   it('defines glossary terms, also in English', () => {
     expect(answer('P10 ne demek?', ctx, t).text).toMatch(/^P10/);

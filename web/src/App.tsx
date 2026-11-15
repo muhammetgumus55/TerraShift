@@ -10,6 +10,7 @@ import { Panel } from '@/shell/Panel';
 import { TopBar } from '@/shell/TopBar';
 import { Profile } from '@/shell/Profile';
 import { ConsentDialog } from '@/shell/ConsentDialog';
+import { Ask } from '@/shell/Ask';
 import { Welcome } from '@/screens/Welcome';
 import { FindField } from '@/screens/FindField';
 import { Questions } from '@/screens/Questions';
@@ -86,6 +87,8 @@ export default function App() {
       )}
       {sim && core && step === 'result' && <SimHud />}
       <MapControls />
+      {/* The farmer stays in the corner on every screen. */}
+      <Ask />
       {profileOpen && <Profile />}
       <ConsentDialog />
     </div>

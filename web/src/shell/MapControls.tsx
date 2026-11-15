@@ -31,7 +31,7 @@ export function MapControls() {
   const toggle = (id: OverlayId) => { const v = !on[id]; setOn({ ...on, [id]: v }); withMap((m) => m.setOverlay(id, v)); };
 
   return (
-    <div className="absolute right-3 top-[4.75rem] z-10 flex flex-col items-end gap-2 md:bottom-8 md:right-4 md:top-auto">
+    <div className="absolute right-3 top-[4.75rem] z-10 flex flex-col items-end gap-2 md:bottom-28 md:right-5 md:top-auto">
       {open && (
         <div className="w-72 max-w-[calc(100vw-1.5rem)] animate-fade rounded-3xl bg-paper p-4 shadow-panel" role="dialog" aria-label={t('layers')}>
           <div className="flex items-center justify-between">
