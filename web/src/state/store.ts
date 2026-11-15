@@ -77,6 +77,12 @@ interface State {
   reset(): void;
 }
 
+/** Same field = the new selection shares at least one parcel with the current one. */
+export function sameField(prev: Parcel[], next: Parcel[]): boolean {
+  const ids = new Set(prev.map((p) => p.id));
+  return next.some((p) => ids.has(p.id));
+}
+
 const KEY = 'nobetsu.v2';
 type Saved = Pick<State, 'lang' | 'step' | 'parcels' | 'locationId' | 'distanceKm' | 'answers' | 'prefs'>;
 
@@ -128,7 +134,11 @@ export const useStore = create<State>((set) => ({
   go: (step) => set((s) => ({ step, sheetOpen: true, sim: false, findMode: step === 'find' ? 'menu' : s.findMode, section: step === 'analyzing' ? 'summary' : s.section })),
   setQuestion: (question) => set({ question }),
   setFindMode: (findMode) => set({ findMode }),
-  setField: (parcels, locationId, distanceKm) => set({ parcels, locationId, distanceKm }),
+  // A different field starts with blank questions; adding or removing a parcel of the same field keeps them.
+  setField: (parcels, locationId, distanceKm) => set((s) => (
+    parcels.length && !sameField(s.parcels, parcels)
+      ? { parcels, locationId, distanceKm, answers: EMPTY_ANSWERS, question: 0 }
+      : { parcels, locationId, distanceKm })),
   answer: (key, value) => set((s) => ({ answers: { ...s.answers, [key]: value } })),
   setHistory: (i, crop) => set((s) => {
     const history = [...s.answers.history] as History;
