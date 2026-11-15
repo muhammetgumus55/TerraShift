@@ -1,4 +1,4 @@
-"""NASA GPM IMERG Final monthly precipitation (V07) at the NöbetSu points.
+"""NASA GPM IMERG Final monthly precipitation (V07) at the Arksus points.
 
 Used only as a second satellite precipitation source next to NASA POWER in the
 `precip_vs_mgm` check (validate.py). The engine's daily weather still comes from POWER.

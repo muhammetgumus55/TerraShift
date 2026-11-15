@@ -1,4 +1,4 @@
-# NöbetSu — MVP Build Plan (4 people, ~24 hours)
+# Arksus — MVP Build Plan (4 people, ~24 hours)
 
 > Read this file first. It is the single source of truth for the MVP.
 > Later additions live in `PLAN_EXPANSION.md`. Nothing from that file is built before milestone M3 is green.
@@ -17,13 +17,13 @@ The stack and the architecture are final from minute one (no throwaway prototype
 
 ## 1. Product in one page
 
-**Name:** NöbetSu
+**Name:** Arksus
 **Challenge:** NASA Space Apps 2026 — *Field Shift: Adapting Farms with NASA Data*
-**Tagline:** *Fallow saves water but leaves the soil bare. NöbetSu weighs water, soil, yield and what the farmer can earn across 24 years of NASA climate, and names the rotation that suits the land best.*
+**Tagline:** *Fallow saves water but leaves the soil bare. Arksus weighs water, soil, yield and what the farmer can earn across 24 years of NASA climate, and names the rotation that suits the land best.*
 
 **Problem.** After the 2025 drought and low 2026 grain prices, Central Anatolian farmers are again asking whether to leave land fallow for a year. On a one-season view, fallow always looks like a loss because it earns nothing. Its real value comes later: more stored soil water and a safer wheat crop the next year. But fallow has a soil cost too: the field sits bare and tilled for over a year. In Karapınar, fallow–cereal farming with heavy disc tillage is one of the causes the Ministry's Konya Soil, Water and Desertification Research Institute lists for the 1960s wind-erosion disaster. Nobody weighs the water, soil, yield and earnings sides of this decision together, with real climate data, and says which option suits a given piece of land.
 
-**What NöbetSu does.** For 13 districts — one rainfed-farming district in each Central Anatolian province (Karapınar, Develi, Polatlı, Eskişehir, Aksaray, Karaman, Niğde, Nevşehir, Kaman, Kırıkkale, Çankırı, Gemerek, Boğazlıyan) — three soil depth classes and three two-year rainfed rotations, it runs a daily FAO-56 soil water balance with NASA POWER weather for 24 historical sequences (2001–2024 start years). It then shows, for each rotation compared with the **current practice (fallow → wheat)**:
+**What Arksus does.** For 13 districts — one rainfed-farming district in each Central Anatolian province (Karapınar, Develi, Polatlı, Eskişehir, Aksaray, Karaman, Niğde, Nevşehir, Kaman, Kırıkkale, Çankırı, Gemerek, Boğazlıyan) — three soil depth classes and three two-year rainfed rotations, it runs a daily FAO-56 soil water balance with NASA POWER weather for 24 historical sequences (2001–2024 start years). It then shows, for each rotation compared with the **current practice (fallow → wheat)**:
 - **Water:** how much water each rotation leaves in the soil at wheat sowing, and in which months the wheat is usually under water or heat stress;
 - **Soil:** how many days the field lies bare, in which months, and how many of those days are windy with a dry surface (wind-exposure index); whether the rotation includes a nitrogen-fixing crop;
 - **Soil profile and minerals:** a regional soil card for each district (texture, pH, organic carbon, total nitrogen, CEC, bulk density, available water) from SoilGrids, each with its 90 % range and an "estimate, not your field" badge; a clear note that phosphorus, potassium and micronutrients cannot be estimated from satellites and need a soil test;
@@ -394,7 +394,7 @@ The challenge is about soil health as much as water. These indicators come from 
 | Texture (clay / sand / silt), bulk density, coarse fragments | Yes, regional estimate | SoilGrids 2.0, 250 m | "estimate, not your field" + 90 % range |
 | pH, organic carbon (SOC), total nitrogen, CEC | Yes, regional estimate | SoilGrids 2.0, 250 m | same |
 | Field capacity / wilting point → available water | Yes, regional estimate | SoilGrids `wv0033`, `wv1500` | same; feeds the engine |
-| Soil water fullness (how full the store is) | Yes, model | NöbetSu engine (FAO-56) with NASA POWER | "model" |
+| Soil water fullness (how full the store is) | Yes, model | Arksus engine (FAO-56) with NASA POWER | "model" |
 | Root-zone wetness / degree of saturation | Yes, regional (9 km) | NASA SMAP L4 `sm_rootzone_wetness` | "satellite + model, 9 km cell" |
 | Plant-available phosphorus, potassium, micronutrients (Zn, Fe…) | **No** | — | "needs a soil test" |
 | Compaction / hardpan, real rooting depth on your field | **No** | — | "needs a field check"; the depth selector covers it |
@@ -478,7 +478,7 @@ T0 = the moment everyone opens the repo. Example clock assumes T0 = Sat 15:00 an
 
 ## 8. Pitch kit (Person D owns, everyone feeds)
 
-- **Story spine:** Karapınar is where Turkey learned the soil cost of fallow (1960s dust storms; fallow–cereal farming with disc tillage is one of the official causes). Today drought and prices push farmers back to fallow for its water. NöbetSu shows both sides with NASA data.
+- **Story spine:** Karapınar is where Turkey learned the soil cost of fallow (1960s dust storms; fallow–cereal farming with disc tillage is one of the official causes). Today drought and prices push farmers back to fallow for its water. Arksus shows both sides with NASA data.
 - **Hero sentence (fill from real results at M3):** "In Karapınar, on medium-depth soil, fallow left a median X mm more water at wheat sowing than chickpea — but kept the field bare for Y more days, Z of them windy and dry." Use only real numbers. If the result is not striking, open with the question instead of a number.
 - **30-second video:** 0–5 s the question and a Central Anatolian field; 5–12 s pick location, depth and priorities, the three cards; 12–22 s field calendar, Chart A and the flip grid; 22–26 s "Why this strategy?" drawer; 26–30 s "NASA POWER + FAO-56, 24 climates, open source" + URL. English subtitles.
 - **Slides (≤ 7):** problem (water vs soil vs earnings) → why one season lies → how (NASA POWER → FAO-56 → yield ratio → priorities and guardrails → recommendation) → the result → where it flips → evidence, gaps and limits → what's next (MUSTECH, more districts, SMAP, GRACE).

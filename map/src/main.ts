@@ -123,7 +123,7 @@ let active: Feature | null = null;
 const pilots = new Pilots();
 pilots.onLoaded = () => { refreshInspector(); $('.mock-banner').hidden = !pilots.anyMock; };
 
-Promise.all([loadProvinces(), loadIslands(), pilots.init().catch((e) => { console.warn('NöbetSu data', e); return []; })])
+Promise.all([loadProvinces(), loadIslands(), pilots.init().catch((e) => { console.warn('Arksus data', e); return []; })])
   .then(([provinces, islands, pilotFeatures]) => {
     vectors.setProvinces(provinces);
     buildTurkeyMask(provinces);
@@ -646,7 +646,7 @@ function updateStatus() {
 function updateAttribution() {
   const parts = [terrain.imagery.source.attribution, TERRAIN.attribution];
   if (terrain.shared.uLabelsOn.value) parts.push(LABELS.attribution);
-  parts.push('NöbetSu: NASA POWER, SoilGrids 2.0', 'geoBoundaries (OSM, CC BY-SA)', '© OpenStreetMap (ODbL)');
+  parts.push('Arksus: NASA POWER, SoilGrids 2.0', 'geoBoundaries (OSM, CC BY-SA)', '© OpenStreetMap (ODbL)');
   const el = $('#sb-attr');
   el.textContent = parts.join(' · ');
   el.title = parts.join('\n');

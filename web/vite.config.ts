@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { fileURLToPath, URL } from 'node:url';
 
-// NöbetSu farmer site. The contract data lives in public/data (written by the
+// Arksus farmer site. The contract data lives in public/data (written by the
 // engine: `make data`), so the build needs no extra copy step.
 export default defineConfig({
   plugins: [react(), tailwindcss()],

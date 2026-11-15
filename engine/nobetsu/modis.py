@@ -1,4 +1,4 @@
-"""NASA MODIS Terra NDVI (MOD13Q1 v061, 250 m, 16-day) at the NöbetSu points.
+"""NASA MODIS Terra NDVI (MOD13Q1 v061, 250 m, 16-day) at the Arksus points.
 
 Used to check the engine's crop calendar against what the satellite sees (validate.ndvi_comparison):
 when does the land green up, peak and dry down, and when is it bare.

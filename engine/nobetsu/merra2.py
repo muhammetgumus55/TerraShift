@@ -1,4 +1,4 @@
-"""NASA MERRA-2 root-zone and surface soil wetness at the NöbetSu points, via NASA POWER.
+"""NASA MERRA-2 root-zone and surface soil wetness at the Arksus points, via NASA POWER.
 
 Replaces NASA SMAP L4 (15 Nov team decision: the AppEEARS SMAP request was never delivered, SMAP is
 dropped, no mock data). It fills the soil-wetness slot of the contract (data/smap/{id}.json →

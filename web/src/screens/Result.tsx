@@ -16,6 +16,8 @@ import type { CropId, DepthId, RotationId } from '@/lib/types';
 import { Button, Card, DataBadge, Note, cn } from '@/ui/kit';
 import { CropIcon } from '@/ui/crops';
 import { Farmer } from '@/ui/farmer/Farmer';
+import { PlantingIntent } from './result/PlantingIntent';
+import { DistrictPlan } from './result/DistrictPlan';
 import { Options } from './result/Options';
 import { WhatIf } from './result/WhatIf';
 import { FieldSim } from './result/FieldSim';
@@ -95,6 +97,8 @@ export function Result() {
           {answers.water === 'limited' && <Note tone="info" icon={<Info size={20} />}>{t('qWaterSub')}</Note>}
           <Hero verdict={verdict} locationId={locationId} depth={depth} />
           <OtherChoices verdict={verdict} />
+          <PlantingIntent verdict={verdict} />
+          <DistrictPlan verdict={verdict} />
           <Blocked verdict={verdict} />
           <Note tone="info" icon={<Info size={20} />}>
             {!isPilot && distanceKm !== null && <b>{t('covered', { name: location.name, km: num(distanceKm, distanceKm < 10 ? 1 : 0) })} </b>}
@@ -274,7 +278,7 @@ function Hero({ verdict, locationId, depth }: { verdict: Verdict; locationId: st
     setSpeaking(true);
   };
   const share = async () => {
-    const text = `NöbetSu · ${summary}`;
+    const text = `Arksus · ${summary}`;
     try {
       if (navigator.share) await navigator.share({ text });
       else { await navigator.clipboard.writeText(text); setCopied(true); window.setTimeout(() => setCopied(false), 2500); }

@@ -1,4 +1,4 @@
-// Loads the NöbetSu data files (web/public/data, served under /data/nobetsu) and
+// Loads the Arksus data files (web/public/data, served under /data/nobetsu) and
 // turns them into what the pilot-district panel shows. All range and decision maths
 // goes through the project's own economics.ts, never re-implemented here.
 // 14 Nov: the site shows no money (ARAYUZLER §9); defaults.json holds decision parameters only.
@@ -71,7 +71,7 @@ export class Pilots {
       this.agent.has(id) ? Promise.resolve(this.agent.get(id)!) : getJSON<AgentFile>(`agent/${id}.json`).catch(() => null),
     ])
       .then(([r, s, a]) => { this.results.set(key, r); if (s) this.smap.set(id, s); this.agent.set(id, a); this.onLoaded(); })
-      .catch((e) => console.warn('NöbetSu results', key, e))
+      .catch((e) => console.warn('Arksus results', key, e))
       .finally(() => this.loading.delete(key));
     this.loading.set(key, p);
   }

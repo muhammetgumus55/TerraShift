@@ -1,4 +1,4 @@
-"""NöbetSu district agent: a local LLM reads the pipeline's results with tools and writes a farmer-facing,
+"""Arksus district agent: a local LLM reads the pipeline's results with tools and writes a farmer-facing,
 source-bound explanation for one district (build time, no server, no API key).
 
     ollama pull qwen2.5:14b                 # once (free, local)
@@ -41,7 +41,7 @@ EXEMPT_NUMBERS = {float(x) for x in range(0, 13)} | {24.0, 100.0}   # counts, mo
 BANNED = ("önerilen", "öneririm", "tavsiye", "en iyi", "en iyisi", "yasak", "kâr garantili", "kar garantili",
           "recommended", "recommend", "best choice", "the best", "banned", "profit guaranteed")
 
-SYSTEM = """You are NöbetSu's district analyst for Central Anatolian dryland farmers.
+SYSTEM = """You are Arksus's district analyst for Central Anatolian dryland farmers.
 You explain, with numbers from the tools only, how three two-year rotations compare in ONE district:
 fallow → wheat (current practice), chickpea → wheat, lentil → wheat.
 Rules:

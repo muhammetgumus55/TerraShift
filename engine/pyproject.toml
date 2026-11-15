@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "nobetsu"
 version = "0.0.1"
-description = "NöbetSu engine: FAO-56 soil water balance for fallow vs legume rotations (NASA Space Apps 2026)"
+description = "Arksus engine: FAO-56 soil water balance for fallow vs legume rotations (NASA Space Apps 2026)"
 requires-python = ">=3.11"
 dependencies = [
   "requests>=2.31",

@@ -1,4 +1,4 @@
-# Weather forecast and near-real-time weather/soil-moisture APIs for NöbetSu (Central Anatolia): access, skill, and agronomic uses
+# Weather forecast and near-real-time weather/soil-moisture APIs for Arksus (Central Anatolia): access, skill, and agronomic uses
 
 Research date: 2026-11-15. Labels used below:
 - **[page]**: I read it on the fetched page.
@@ -84,7 +84,7 @@ The free tier is non-commercial only (no ads, no subscriptions), allows 10,000 c
 - **CORS:** the official docs and pricing pages do not mention CORS. — [page] [docs](https://open-meteo.com/en/docs), [pricing](https://open-meteo.com/en/pricing). The live test confirmed `*` on both the forecast and seasonal endpoints [test]. Third-party directories also say CORS is supported with no auth. — [snippet] [public-api.org](https://public-api.org/api/1412/open-meteo), [DEV Community](https://dev.to/0012303/open-meteo-has-a-free-weather-api-no-key-no-signup-real-forecast-data-2nna)
 
 ### Inferences
-- **Commercial status:** NöbetSu is a public, non-profit hackathon site with no ads or subscriptions. Under the published Creative Commons definition it falls in "non-profit websites and apps". This is my reading of the terms, not a ruling from Open-Meteo. If the project later gets a sponsor, ads, or a commercial spin-off, it would need a paid plan.
+- **Commercial status:** Arksus is a public, non-profit hackathon site with no ads or subscriptions. Under the published Creative Commons definition it falls in "non-profit websites and apps". This is my reading of the terms, not a ruling from Open-Meteo. If the project later gets a sponsor, ads, or a commercial spin-off, it would need a paid plan.
 - **Rate limits:** the limits are per IP. Browser calls from each farmer's device spread the load across users, so 10,000 calls a day is unlikely to bind. Caching per field and per day (for example in `sessionStorage`) still reduces calls.
 - **Request size:** keep requests to 10 or fewer variables to avoid fractional extra-call counting.
 - **Soil fields:** Open-Meteo soil moisture and temperature are model outputs, not measurements. Per the repo's badge rule they would be labelled "model", and precipitation probability "model" as well. The site's water balance is driven by NASA POWER, so Open-Meteo soil moisture is best shown as context rather than fed into the engine.
@@ -253,7 +253,7 @@ Türkiye already has public agro-meteorology services:
 - TARBİL, with about 400 stations.
 - An MGM-described 5-day field-work report.
 
-None of these was found to combine a field-level water balance, a rotation recommendation and a fertilizer-timing rule tied to forecast rain. NöbetSu's originality claim should be that integration, not "first agro-weather forecast in Türkiye".
+None of these was found to combine a field-level water balance, a rotation recommendation and a fertilizer-timing rule tied to forecast rain. Arksus's originality claim should be that integration, not "first agro-weather forecast in Türkiye".
 
 ### Cited findings
 - **MGM Ziraat products:** ZDUS, Hasat Zamanı Tahmini, Tarımsal Hava Tahmini, BİSİP, SINEP, ETo, Aylık Bülten, Uygun Ekim Zamanı, Fenoloji Haritaları. — [page] [MGM ZDUS](https://www.mgm.gov.tr/tarim/zdus.aspx)

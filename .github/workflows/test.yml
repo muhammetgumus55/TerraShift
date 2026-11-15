@@ -1,4 +1,4 @@
-# NöbetSu CI: engine tests (pytest), web tests (vitest) and the web + map builds on every push and PR.
+# Arksus CI: engine tests (pytest), web tests (vitest) and the web + map builds on every push and PR.
 # AGENTS.md: "Testler geçmeden merge yok. main her zaman build alır."
 name: test
 

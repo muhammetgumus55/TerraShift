@@ -1,4 +1,4 @@
-// The NöbetSu farmer, the face of the site's guide. Pixel art kept as text:
+// The Arksus farmer, the face of the site's guide. Pixel art kept as text:
 // one letter per pixel, '.' is transparent, PALETTE gives the colours. Every
 // frame is the base picture with a few rows patched, so changing the look
 // means changing letters here.

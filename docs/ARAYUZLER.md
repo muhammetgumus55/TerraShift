@@ -366,3 +366,18 @@ export function omClass(f: SoilHealthFile, om: number): Text;
 
 Kurallar: bileşende hesap yok. Ceza ve destek tutarı gösterilmez. Organik madde artış hızı verilmez.
 
+
+## 16. Hesap girişi (Supabase e-posta + şifre), onay ve ilçe ekim kaydı — Supabase (Gümüş) → web — SÖZLEŞME EKLENDİ 15 Kas
+
+İlk kez sunucuya kullanıcı verisi yazılıyor. Ne yazılabileceğini `docs/legal/` belirler: **sadece il + ilçe; tarla sınırı, ada/parsel, GPS sunucuya gitmez.**
+
+- Supabase projesi `nobetsu` (eu-central-1). Tablolar ve erişim kuralları: `supabase/migrations/20261115084930_consent_profiles_intents.sql`.
+  - `consents(user_id, kind, version, granted, created_at)` — sadece eklenir; `kind`: `notice_read` | `district_stats` | `llm_training`.
+  - `profiles(user_id, answers, prefs, location_id, il, ilce)` — sadece sahibi.
+  - `planting_intents(user_id, harvest_year, il, ilce, crop, irrigation)` — kullanıcı başına yılda bir satır; sadece `district_stats` izni varken yazılır; izin geri alınınca silinir.
+  - `rpc district_totals(year)` — herkese açık; sadece en az 5 kaydı olan ilçelerin ürün toplamları, kullanıcı kimliği yok.
+  - `rpc delete_my_account()` — giriş yapmış kullanıcının hesabını ve tüm satırlarını siler.
+- Web: `services/cloud.ts` (Supabase çağrıları), `state/cloud.ts` (oturum, onaylar, profil eşitleme), `domain/consent.ts` (sürümler: `NOTICE_VERSION = 'aydinlatma-v1'`, `CONSENT_VERSION = 'acik-riza-v1'`; `LLM_CONSENT_OPEN = false`).
+- Ortam: `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY` (Vercel + `web/.env.local`). Yoksa site Biar'ın cihaz içi deneme girişiyle çalışır.
+- Kurallar: aydınlatma metni okunmadan hiçbir kullanıcı verisi yazılmaz; açık rıza hizmet şartı değildir; metin değişirse sürüm kimliği değişir (`docs/legal/README.md`). `web/public/legal/*.md`, `docs/legal/*.md` ile aynı kalır (test: `domain/consent.test.ts`).
+- (15 Kas) Sitede "İlçende bu sezon ne ekiliyor?" kartı (`screens/result/DistrictPlan.tsx`, hesap `domain/districtPlan.ts`): `district_totals` çağrılır, giriş gerekmez. Eşik altındaysa "yeterli kayıt yok" yazar; isteyene `public/demo/district_plans.json` (`mock: true`, `verified: false`, uydurma örnek) sarı "Örnek veri — gerçek kayıt değil" etiketiyle gösterilir. Demo dosyası `public/data` dışında tutulur (sözleşme verisi değildir).

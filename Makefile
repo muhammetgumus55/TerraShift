@@ -1,4 +1,4 @@
-# NöbetSu — owner: Gümüş (Rol B). Windows: install make (e.g. `winget install ezwinports.make`) or run the commands below by hand.
+# Arksus — owner: Gümüş (Rol B). Windows: install make (e.g. `winget install ezwinports.make`) or run the commands below by hand.
 PYTHON ?= python
 
 .PHONY: test test-py test-web test-map mock data web map agent ndvi merra2

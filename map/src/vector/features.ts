@@ -114,7 +114,7 @@ export async function loadIslands(): Promise<Feature[]> {
   }));
 }
 
-/** Pilot district = a NöbetSu location: a point that represents the district,
+/** Pilot district = a Arksus location: a point that represents the district,
  *  drawn with a 10 km circle so it can be picked on the map. The circle is a
  *  display aid, not a boundary from the data. */
 export const PILOT_RADIUS_M = 10000;

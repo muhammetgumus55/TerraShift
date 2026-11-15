@@ -167,9 +167,24 @@ Ekip kararı: çiftçiye "şu kadar kâr ettin" denmeyecek. Site, arazi için **
 
 ## 18. Canlı site ve TKGM günlük sınırı (15 Kas, Gümüş — Gümüş'ün isteğiyle)
 
-Site canlıda: https://nobetsu.vercel.app (Vercel projesi `nobetsu`, kök `web/`; şimdilik CLI ile deploy, GitHub bağlantısı Vercel uygulamasına repo izni bekliyor). Canlıda TKGM `nobetsu.vercel.app`'ten gelen isteklere ilk istekte bile 403 "Günlük sorgu limitini aştınız" diyor; site adresini gizleyerek sınırı aşmıyoruz.
+Site canlıda: https://arksus.vercel.app (Vercel projesi `nobetsu`, kök `web/`; şimdilik CLI ile deploy, GitHub bağlantısı Vercel uygulamasına repo izni bekliyor). Canlıda TKGM `arksus.vercel.app`'ten gelen isteklere ilk istekte bile 403 "Günlük sorgu limitini aştınız" diyor; site adresini gizleyerek sınırı aşmıyoruz.
 - [ ] `services/tkgm.ts`: 403/429 gelince "bugün sınırlı" diye hatırlanır (`localStorage` `nobetsu.tkgm-limited` = tarih); TKGM normal cevap verince silinir. `tkgmLimited()`, `onTkgmLimited()` (useSyncExternalStore için). Test: `tkgm.test.ts` "daily limit memory".
 - [ ] `screens/FindField.tsx`: sınır varken menüde bilgi notu (`tkgmBusyNote`), "Haritada elle çiz" en üste çıkar; "Tarlanın üstüne dokun" ve "Ada / parsel" soluk görünür (`tkgmBusySub`) ama tıklanabilir kalır. Konum ve arama sonrası `tap` yerine doğrudan `draw` açılır.
 - [ ] `screens/find/ParcelNumber.tsx`: il/ilçe/mahalle listeleri sınırda `tkgmFail` yerine `tkgmLimit` yazar, il kutusu "Yükleniyor…"da takılı kalmaz, hata notunda "Haritada elle çiz" düğmesi (`onDraw`).
 - Ayrıca canlıda: `web/.env.local` ve Vercel'de `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY` var (Supabase projesi `nobetsu`, Frankfurt); kodda henüz kullanılmıyor. Giriş ekranı için `package.json`'a `@supabase/supabase-js` gerekecek.
 - [ ] (15 Kas, Gümüş — `biar` ve `omer` muhammet'e alınırken) `Result.tsx` çakışması: Biar'ın `SectionId` tipi + Toprak sağlığı bölümü birlikte. `domain/sections.ts` `SECTION_IDS`'e `soilHealth` eklendi (sade modda da görünür), `shell/Profile.tsx` ayar listesine `secSoilHealth`. Biar'ın branch'inde zaten kırık olan iki test düzeltildi: `askNote` metninde "gelir" (para kelimesi testi) → "dayanır"; `domain/assistant.ts` alternatiflere `'baska ne'` (yoksa "başka ne ekebilirim" ekim önerisine gidiyordu).
+
+## 19. Hesap girişi (Supabase e-posta + şifre) ve KVKK onayı (15 Kas, Gümüş — Gümüş'ün isteğiyle; sözleşme: ARAYUZLER §16)
+
+- [ ] `package.json`: `@supabase/supabase-js@^2` eklendi.
+- [ ] Yeni: `services/cloud.ts`, `state/cloud.ts`, `domain/consent.ts` (+test), `ui/Markdown.tsx` (+test, hukuk metinleri için küçük okuyucu), `shell/CloudAccount.tsx`, `shell/ConsentDialog.tsx`, `screens/result/PlantingIntent.tsx`, `public/legal/*.md` (docs/legal kopyası; test eşitliği kontrol eder), `vite-env.d.ts`'e iki env tipi.
+- [ ] Biar'ın dosyalarına küçük dokunuş: `shell/Profile.tsx` Supabase varsa deneme girişi yerine `CloudAccount`; `shell/TopBar.tsx` Google kullanıcısını gösterir; `App.tsx` `ConsentDialog`'u bağlar; `Result.tsx` öneri bölümünde `OtherChoices`'tan sonra `PlantingIntent`. Deneme girişi (`domain/auth.ts`) silinmedi; env yoksa hâlâ o çalışır.
+- [ ] `i18n/strings.ts`: `g*`, `cd*`, `pi*` anahtarları.
+- Not (15 Kas, ikinci karar): Google OAuth kullanılmıyor; giriş Supabase'in kendi e-posta + şifre girişiyle (`CloudAccount` içindeki `EmailForm`). Supabase'de "Confirm email" kapalı olmalı (ücretsiz e-posta gönderimi ekip dışına mail atmıyor).
+- [ ] (15 Kas, Gümüş) Öneri bölümünde `PlantingIntent`'in altına `DistrictPlan` kartı (ilçe toplamları; eşik altında "yeterli kayıt yok" + "Örnek veriyle göster"). Yeni: `domain/districtPlan.ts` (+test), `public/demo/district_plans.json`, `i18n` `dp*` anahtarları. Giriş formuna aydınlatma (zorunlu) ve açık rıza (isteğe bağlı) kutucukları; metinler portal ile ayrı pencerede.
+
+## 20. Ad değişikliği: NöbetSu → Arksus (15 Kas, Gümüş — Gümüş'ün isteğiyle)
+
+- [ ] Sitede görünen her yer: `appName`, `farmerName`, sayfa başlığı (`App.tsx`, `index.html`), paylaşım metni (`Result.tsx`), çiftçi SVG başlığı, hukuk metinleri. Haritada (Biar) `index.html` başlığı ve marka, `strings.ts` tanıtım ve "Pilot ilçe · Arksus".
+- [ ] İç adlar **değişmedi**: tarayıcı hafıza anahtarları (`nobetsu.v2`, `nobetsu.users`, `nobetsu.session`, `nobetsu.tkgm-limited`; değişirse kayıtlı cevaplar kaybolur), haritanın `/data/nobetsu` yolu ve `VITE_NOBETSU_DATA`, Python paketi.
+- [ ] Yeni adres: https://arksus.vercel.app (aynı Vercel projesi; eski nobetsu.vercel.app de çalışıyor).

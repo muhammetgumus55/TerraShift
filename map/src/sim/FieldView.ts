@@ -24,7 +24,7 @@ export type FieldViewInput = {
   bbox: BBox;                      // mercator metres
   polys: Polygon[] | null;         // field outline, if the area came from a feature
   imagery: RasterSource;
-  /** Wettest week in the nearest NöbetSu district's ledger, for the rain preset. */
+  /** Wettest week in the nearest Arksus district's ledger, for the rain preset. */
   wettestWeek: Promise<{ district: string; mm: number } | null>;
 };
 

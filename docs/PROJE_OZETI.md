@@ -1,4 +1,4 @@
-# NöbetSu — 5 dakikada proje
+# Arksus — 5 dakikada proje
 
 > Bu dosya herkes için. Yazılım bilmesen de anlaşılır olsun diye yazıldı. Ayrıntı `PLAN_MVP.md`'de.
 

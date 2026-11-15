@@ -1,4 +1,4 @@
-# AGENTS.md — NöbetSu (NASA Space Apps 2026, "Field Shift")
+# AGENTS.md — Arksus (NASA Space Apps 2026, "Field Shift")
 
 Tek doğru kaynak: `docs/PLAN_MVP.md`. Kod bağlantıları: `docs/ARAYUZLER.md`. Görev listesi: `TASKS.md`.
 

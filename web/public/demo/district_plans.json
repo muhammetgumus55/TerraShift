@@ -1,0 +1,399 @@
+{
+ "mock": true,
+ "harvest_year": 2027,
+ "source": "Örnek (uydurma) veri: kartın nasıl görüneceğini göstermek için. Gerçek çiftçi kaydı değildir; hiçbir karar için kullanılmaz.",
+ "type": "assumption",
+ "verified": false,
+ "rows": [
+  {
+   "il": "Konya",
+   "ilce": "Karapınar",
+   "crop": "wheat",
+   "fields": 34
+  },
+  {
+   "il": "Konya",
+   "ilce": "Karapınar",
+   "crop": "chickpea",
+   "fields": 8
+  },
+  {
+   "il": "Konya",
+   "ilce": "Karapınar",
+   "crop": "lentil",
+   "fields": 5
+  },
+  {
+   "il": "Konya",
+   "ilce": "Karapınar",
+   "crop": "barley",
+   "fields": 4
+  },
+  {
+   "il": "Konya",
+   "ilce": "Karapınar",
+   "crop": "fallow",
+   "fields": 3
+  },
+  {
+   "il": "Kayseri",
+   "ilce": "Develi",
+   "crop": "wheat",
+   "fields": 41
+  },
+  {
+   "il": "Kayseri",
+   "ilce": "Develi",
+   "crop": "chickpea",
+   "fields": 19
+  },
+  {
+   "il": "Kayseri",
+   "ilce": "Develi",
+   "crop": "lentil",
+   "fields": 10
+  },
+  {
+   "il": "Kayseri",
+   "ilce": "Develi",
+   "crop": "barley",
+   "fields": 7
+  },
+  {
+   "il": "Kayseri",
+   "ilce": "Develi",
+   "crop": "fallow",
+   "fields": 5
+  },
+  {
+   "il": "Ankara",
+   "ilce": "Polatlı",
+   "crop": "wheat",
+   "fields": 48
+  },
+  {
+   "il": "Ankara",
+   "ilce": "Polatlı",
+   "crop": "chickpea",
+   "fields": 11
+  },
+  {
+   "il": "Ankara",
+   "ilce": "Polatlı",
+   "crop": "lentil",
+   "fields": 15
+  },
+  {
+   "il": "Ankara",
+   "ilce": "Polatlı",
+   "crop": "barley",
+   "fields": 10
+  },
+  {
+   "il": "Ankara",
+   "ilce": "Polatlı",
+   "crop": "fallow",
+   "fields": 7
+  },
+  {
+   "il": "Eskişehir",
+   "ilce": "Eskişehir",
+   "crop": "wheat",
+   "fields": 55
+  },
+  {
+   "il": "Eskişehir",
+   "ilce": "Eskişehir",
+   "crop": "chickpea",
+   "fields": 22
+  },
+  {
+   "il": "Eskişehir",
+   "ilce": "Eskişehir",
+   "crop": "lentil",
+   "fields": 6
+  },
+  {
+   "il": "Eskişehir",
+   "ilce": "Eskişehir",
+   "crop": "barley",
+   "fields": 4
+  },
+  {
+   "il": "Eskişehir",
+   "ilce": "Eskişehir",
+   "crop": "fallow",
+   "fields": 9
+  },
+  {
+   "il": "Aksaray",
+   "ilce": "Aksaray",
+   "crop": "wheat",
+   "fields": 39
+  },
+  {
+   "il": "Aksaray",
+   "ilce": "Aksaray",
+   "crop": "chickpea",
+   "fields": 14
+  },
+  {
+   "il": "Aksaray",
+   "ilce": "Aksaray",
+   "crop": "lentil",
+   "fields": 11
+  },
+  {
+   "il": "Aksaray",
+   "ilce": "Aksaray",
+   "crop": "barley",
+   "fields": 7
+  },
+  {
+   "il": "Aksaray",
+   "ilce": "Aksaray",
+   "crop": "fallow",
+   "fields": 11
+  },
+  {
+   "il": "Karaman",
+   "ilce": "Karaman",
+   "crop": "wheat",
+   "fields": 46
+  },
+  {
+   "il": "Karaman",
+   "ilce": "Karaman",
+   "crop": "chickpea",
+   "fields": 25
+  },
+  {
+   "il": "Karaman",
+   "ilce": "Karaman",
+   "crop": "lentil",
+   "fields": 16
+  },
+  {
+   "il": "Karaman",
+   "ilce": "Karaman",
+   "crop": "barley",
+   "fields": 10
+  },
+  {
+   "il": "Karaman",
+   "ilce": "Karaman",
+   "crop": "fallow",
+   "fields": 13
+  },
+  {
+   "il": "Niğde",
+   "ilce": "Niğde",
+   "crop": "wheat",
+   "fields": 53
+  },
+  {
+   "il": "Niğde",
+   "ilce": "Niğde",
+   "crop": "chickpea",
+   "fields": 17
+  },
+  {
+   "il": "Niğde",
+   "ilce": "Niğde",
+   "crop": "lentil",
+   "fields": 7
+  },
+  {
+   "il": "Niğde",
+   "ilce": "Niğde",
+   "crop": "barley",
+   "fields": 4
+  },
+  {
+   "il": "Niğde",
+   "ilce": "Niğde",
+   "crop": "fallow",
+   "fields": 4
+  },
+  {
+   "il": "Nevşehir",
+   "ilce": "Nevşehir",
+   "crop": "wheat",
+   "fields": 37
+  },
+  {
+   "il": "Nevşehir",
+   "ilce": "Nevşehir",
+   "crop": "chickpea",
+   "fields": 9
+  },
+  {
+   "il": "Nevşehir",
+   "ilce": "Nevşehir",
+   "crop": "lentil",
+   "fields": 12
+  },
+  {
+   "il": "Nevşehir",
+   "ilce": "Nevşehir",
+   "crop": "barley",
+   "fields": 7
+  },
+  {
+   "il": "Nevşehir",
+   "ilce": "Nevşehir",
+   "crop": "fallow",
+   "fields": 6
+  },
+  {
+   "il": "Kırşehir",
+   "ilce": "Kaman",
+   "crop": "wheat",
+   "fields": 44
+  },
+  {
+   "il": "Kırşehir",
+   "ilce": "Kaman",
+   "crop": "chickpea",
+   "fields": 20
+  },
+  {
+   "il": "Kırşehir",
+   "ilce": "Kaman",
+   "crop": "lentil",
+   "fields": 17
+  },
+  {
+   "il": "Kırşehir",
+   "ilce": "Kaman",
+   "crop": "barley",
+   "fields": 10
+  },
+  {
+   "il": "Kırşehir",
+   "ilce": "Kaman",
+   "crop": "fallow",
+   "fields": 8
+  },
+  {
+   "il": "Kırıkkale",
+   "ilce": "Kırıkkale",
+   "crop": "wheat",
+   "fields": 51
+  },
+  {
+   "il": "Kırıkkale",
+   "ilce": "Kırıkkale",
+   "crop": "chickpea",
+   "fields": 12
+  },
+  {
+   "il": "Kırıkkale",
+   "ilce": "Kırıkkale",
+   "crop": "lentil",
+   "fields": 8
+  },
+  {
+   "il": "Kırıkkale",
+   "ilce": "Kırıkkale",
+   "crop": "barley",
+   "fields": 4
+  },
+  {
+   "il": "Kırıkkale",
+   "ilce": "Kırıkkale",
+   "crop": "fallow",
+   "fields": 10
+  },
+  {
+   "il": "Çankırı",
+   "ilce": "Çankırı",
+   "crop": "wheat",
+   "fields": 35
+  },
+  {
+   "il": "Çankırı",
+   "ilce": "Çankırı",
+   "crop": "chickpea",
+   "fields": 23
+  },
+  {
+   "il": "Çankırı",
+   "ilce": "Çankırı",
+   "crop": "lentil",
+   "fields": 13
+  },
+  {
+   "il": "Çankırı",
+   "ilce": "Çankırı",
+   "crop": "barley",
+   "fields": 7
+  },
+  {
+   "il": "Çankırı",
+   "ilce": "Çankırı",
+   "crop": "fallow",
+   "fields": 12
+  },
+  {
+   "il": "Sivas",
+   "ilce": "Gemerek",
+   "crop": "wheat",
+   "fields": 42
+  },
+  {
+   "il": "Sivas",
+   "ilce": "Gemerek",
+   "crop": "chickpea",
+   "fields": 15
+  },
+  {
+   "il": "Sivas",
+   "ilce": "Gemerek",
+   "crop": "lentil",
+   "fields": 18
+  },
+  {
+   "il": "Sivas",
+   "ilce": "Gemerek",
+   "crop": "barley",
+   "fields": 10
+  },
+  {
+   "il": "Sivas",
+   "ilce": "Gemerek",
+   "crop": "fallow",
+   "fields": 3
+  },
+  {
+   "il": "Yozgat",
+   "ilce": "Boğazlıyan",
+   "crop": "wheat",
+   "fields": 49
+  },
+  {
+   "il": "Yozgat",
+   "ilce": "Boğazlıyan",
+   "crop": "chickpea",
+   "fields": 26
+  },
+  {
+   "il": "Yozgat",
+   "ilce": "Boğazlıyan",
+   "crop": "lentil",
+   "fields": 9
+  },
+  {
+   "il": "Yozgat",
+   "ilce": "Boğazlıyan",
+   "crop": "barley",
+   "fields": 4
+  },
+  {
+   "il": "Yozgat",
+   "ilce": "Boğazlıyan",
+   "crop": "fallow",
+   "fields": 5
+  }
+ ]
+}

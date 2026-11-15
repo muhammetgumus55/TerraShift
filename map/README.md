@@ -1,6 +1,6 @@
-# NöbetSu · land map (`map/`)
+# Arksus · land map (`map/`)
 
-A 3D land map of Turkey built on three.js, for the NöbetSu project
+A 3D land map of Turkey built on three.js, for the Arksus project
 (NASA Space Apps 2026, *Field Shift*). It opens the 13 Central Anatolian pilot districts
 (one per province, from `web/public/data/site_index.json`) with their 24-year water / soil results, and lets you pick
 provinces, islands, fields and parcels anywhere in Turkey.
@@ -33,7 +33,7 @@ npm run data         # rebuild public/data/{provinces,islands}.json from scripts
 - `src/engine/Overlay.ts`: vector layers are rasterised into a per-tile canvas and
   blended in the terrain shader, so they drape exactly at any exaggeration.
 - `src/engine/MapCamera.ts`: pan and zoom anchored to the terrain point under the cursor.
-- `src/pilots.ts`: loads NöbetSu data and calls its `economics.ts`; money and kg/da
+- `src/pilots.ts`: loads Arksus data and calls its `economics.ts`; money and kg/da
   are hidden while cost or Ym is still `null`, as the project's rules require.
 - `src/strings.ts`: every UI string in Turkish and English.
 

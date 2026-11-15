@@ -1,4 +1,5 @@
 import { UserRound } from 'lucide-react';
+import { cloudEnabled, useCloud } from '@/state/cloud';
 import { useT } from '@/i18n';
 import { useStore } from '@/state/store';
 import { cn } from '@/ui/kit';
@@ -8,7 +9,10 @@ export function TopBar() {
   const { t, lang } = useT();
   const setLang = useStore((s) => s.setLang);
   const go = useStore((s) => s.go);
-  const user = useStore((s) => s.user);
+  // With Supabase configured its account is the account; otherwise the device-only trial.
+  const trialUser = useStore((s) => s.user);
+  const cloudUser = useCloud((s) => s.user);
+  const user = cloudEnabled ? (cloudUser ? cloudUser.name || cloudUser.email : null) : trialUser;
   const setProfileOpen = useStore((s) => s.setProfileOpen);
   return (
     <header className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center justify-between gap-3 p-3 md:p-4">

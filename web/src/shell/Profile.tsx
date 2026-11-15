@@ -5,6 +5,8 @@ import { useStore } from '@/state/store';
 import { currentAccount, deleteAccount, login, MIN_PASSWORD, register, type AuthError } from '@/domain/auth';
 import { ADVANCED_ONLY, ALWAYS, isCustom, SECTION_IDS, showFor, type Mode, type SectionId } from '@/domain/sections';
 import { Button, Choice, Note, cn } from '@/ui/kit';
+import { cloudEnabled } from '@/state/cloud';
+import { CloudAccount } from './CloudAccount';
 
 const SECTION_KEY: Record<SectionId, Key> = {
   summary: 'secSummary', options: 'secOptions', climates: 'secClimates', twoYears: 'secTwoYears', calendar: 'secCalendar',
@@ -34,7 +36,8 @@ export function Profile() {
           <h2 id="profile-title" className="text-2xl font-black">{t('profileTitle')}</h2>
           <button type="button" onClick={() => setOpen(false)} aria-label={t('close')} className="grid h-11 w-11 place-items-center rounded-xl hover:bg-canvas"><X size={22} /></button>
         </header>
-        <AccountBox />
+        {/* Supabase account (email + password) when configured; otherwise the device-only trial. */}
+        {cloudEnabled ? <CloudAccount /> : <AccountBox />}
         <SettingsBox />
       </div>
     </div>

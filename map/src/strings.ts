@@ -1,4 +1,4 @@
-// Every UI string in both languages, as NöbetSu's frontend brief asks
+// Every UI string in both languages, as Arksus's frontend brief asks
 // (src/strings.ts with en and tr keys). Data files carry their own {en, tr}.
 
 export type Lang = 'tr' | 'en';
@@ -61,8 +61,8 @@ const S = {
   // Inspector
   emptyTitle: { tr: 'Bir yer seçin', en: 'Pick a place' },
   emptyBody: {
-    tr: 'NöbetSu İç Anadolu’nun 13 pilot ilçesinde 24 yıllık NASA iklim verisiyle nadas ve baklagil seçeneklerini karşılaştırır. Bir pilot ilçeyle başlayın ya da haritada bir il, ada, tarla veya parsele tıklayın.',
-    en: 'NöbetSu compares fallow and legume options in 13 Central Anatolian pilot districts with 24 years of NASA climate data. Start with a pilot district, or click a province, island, field or parcel on the map.',
+    tr: 'Arksus İç Anadolu’nun 13 pilot ilçesinde 24 yıllık NASA iklim verisiyle nadas ve baklagil seçeneklerini karşılaştırır. Bir pilot ilçeyle başlayın ya da haritada bir il, ada, tarla veya parsele tıklayın.',
+    en: 'Arksus compares fallow and legume options in 13 Central Anatolian pilot districts with 24 years of NASA climate data. Start with a pilot district, or click a province, island, field or parcel on the map.',
   },
   emptyPilots: { tr: 'Pilot ilçeler', en: 'Pilot districts' },
   howTo: { tr: 'Nasıl seçilir', en: 'How to pick' },
@@ -103,7 +103,7 @@ const S = {
   seePilot: { tr: '{name} sonuçlarını aç', en: 'Open {name} results' },
 
   // Pilot district panel
-  pilotChip: { tr: 'Pilot ilçe · NöbetSu', en: 'Pilot district · NöbetSu' },
+  pilotChip: { tr: 'Pilot ilçe · Arksus', en: 'Pilot district · Arksus' },
   depth: { tr: 'Toprak derinliği', en: 'Soil depth' },
   rotations: { tr: 'İki yıllık seçenekler', en: 'Two-year options' },
   rotationsSub: { tr: '24 başlangıç yılı ({a}–{b}), medyan ve P10–P90', en: '24 start years ({a}–{b}), median and P10–P90' },

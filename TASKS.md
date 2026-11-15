@@ -1,4 +1,4 @@
-# NöbetSu — Ekip Görevleri (4 kişi, ~24 saat)
+# Arksus — Ekip Görevleri (4 kişi, ~24 saat)
 
 Önce **`docs/PROJE_OZETI.md`** (herkes, 5 dk), sonra kendi dosyan: **`docs/team/<ADIN>.md`**.
 Ayrıntı: `docs/PLAN_MVP.md` (tek doğru kaynak) · kod uyumu: `docs/ARAYUZLER.md` · sonra `docs/PLAN_EXPANSION.md`.

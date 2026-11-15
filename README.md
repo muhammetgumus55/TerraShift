@@ -1,10 +1,10 @@
-# NöbetSu
+# Arksus
 
-**Fallow saves water but leaves the soil bare. NöbetSu weighs water, soil, yield and what the farmer can earn across 24 years of NASA climate, and shows which rotation suits the land best.**
+**Fallow saves water but leaves the soil bare. Arksus weighs water, soil, yield and what the farmer can earn across 24 years of NASA climate, and shows which rotation suits the land best.**
 
 NASA Space Apps Challenge 2026 · *Field Shift: Adapting Farms with NASA Data*
 
-NöbetSu helps rainfed farmers in Central Anatolia (Turkey) compare three two-year rotations before wheat:
+Arksus helps rainfed farmers in Central Anatolia (Turkey) compare three two-year rotations before wheat:
 
 | Rotation | Role |
 |---|---|
@@ -198,4 +198,4 @@ AI tools were used; who used which tool for what is listed in [`docs/AI_USE.md`]
 
 ## Türkçe özet
 
-NöbetSu, İç Anadolu'daki kuru tarım çiftçisi için "nadas mı, nohut mu, mercimek mi?" sorusunu su, toprak, verim ve çiftçinin kazancı açısından birlikte tartar (para gösterilmez), NASA POWER'ın 24 yıllık iklim verisiyle birlikte gösterir. 13 ilin her birinden bir ilçe, 3 toprak derinliği ve 3 rotasyon için hesaplanır. Bir tarla için verim tahmini değildir, "şunu ek" demez; seçenekleri yan yana koyar, kararı çiftçi ve yerel uzman verir. Kurulum ve komutlar yukarıda; tüm kaynaklar `docs/SOURCES.md`'de.
+Arksus, İç Anadolu'daki kuru tarım çiftçisi için "nadas mı, nohut mu, mercimek mi?" sorusunu su, toprak, verim ve çiftçinin kazancı açısından birlikte tartar (para gösterilmez), NASA POWER'ın 24 yıllık iklim verisiyle birlikte gösterir. 13 ilin her birinden bir ilçe, 3 toprak derinliği ve 3 rotasyon için hesaplanır. Bir tarla için verim tahmini değildir, "şunu ek" demez; seçenekleri yan yana koyar, kararı çiftçi ve yerel uzman verir. Kurulum ve komutlar yukarıda; tüm kaynaklar `docs/SOURCES.md`'de.

@@ -1,4 +1,4 @@
-# İç Anadolu ürün deseni: hangi ürünler, kuru ve sulu, nadas (NöbetSu'nun 13 ilçesi ve ili)
+# İç Anadolu ürün deseni: hangi ürünler, kuru ve sulu, nadas (Arksus'un 13 ilçesi ve ili)
 
 How the evidence was gathered: I could not query TÜİK's own portal (biruni / data.tuik.gov.tr renders with JavaScript and has no static tables). Province numbers therefore come from secondary official compilations that cite TÜİK: TEPGE reports, KOP BKİ (development administration) reports and Mevlana Kalkınma Ajansı. Each line carries one of two labels:
 - **[PAGE]**: I downloaded the PDF and read the text myself (pdftotext).
@@ -71,7 +71,7 @@ Cool-season legumes (nohut, yeşil mercimek) are concentrated in Ankara, Yozgat,
 - The Konya 2024 wheat yield (323 kg/da) sits close to the national 2023/24 average (322 kg/da), even though most Konya wheat is rainfed. Konya's irrigated wheat probably lifts its average. This is my inference and was not verified.
 
 ### Gaps
-- No 2023–2025 TÜİK il-level table (area, production, yield) for all 13 provinces was retrieved. Province-level TÜİK data has to be pulled manually from biruni.tuik.gov.tr ("Bitkisel Üretim İstatistikleri → İl/İlçe") or from the TÜİK MEDAS export. NöbetSu's `data/` work should do this directly.
+- No 2023–2025 TÜİK il-level table (area, production, yield) for all 13 provinces was retrieved. Province-level TÜİK data has to be pulled manually from biruni.tuik.gov.tr ("Bitkisel Üretim İstatistikleri → İl/İlçe") or from the TÜİK MEDAS export. Arksus's `data/` work should do this directly.
 - No numbers retrieved for Eskişehir, Kırıkkale or Çankırı crop areas, nor for kuru soğan (Ankara/Polatlı, Eskişehir, Çorum belt), aspir by province, or fiğ/korunga by province.
 
 ---
@@ -187,7 +187,7 @@ The traditional rainfed system is **buğday–nadas** (2-year), often with conti
 
 ### Inferences
 - Legume prevalence can be gauged indirectly. National chickpea and green-lentil production is concentrated in Ankara, Yozgat, Kırşehir and Konya, and KOP holds 47% of TR nohut and 78% of yeşil mercimek. So buğday–nohut and buğday–mercimek are most common on the northern and eastern rainfed plateau (Yozgat/Boğazlıyan, Kırşehir/Kaman, Ankara/Polatlı) rather than in Konya Ovası.
-- Kaya et al. note that the guardrail concept for NöbetSu (the wheat yield penalty after sunflower or safflower) matches farmer behaviour.
+- Kaya et al. note that the guardrail concept for Arksus (the wheat yield penalty after sunflower or safflower) matches farmer behaviour.
 
 ### Gaps
 - No survey-based percentage of farms or area under each rotation type was found. The figures are all qualitative or trial-based.
@@ -223,7 +223,7 @@ Only fragmentary district-level information was found. Karapınar is the best do
 - **Çankırı**: no data found in this round.
 
 ### Inferences
-- For NöbetSu's archetypes:
+- For Arksus's archetypes:
 
 | Type | Districts | Main crops |
 |---|---|---|

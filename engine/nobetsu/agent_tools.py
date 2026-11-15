@@ -1,4 +1,4 @@
-"""Read-only tools for the NöbetSu district agent (nobetsu.agent).
+"""Read-only tools for the Arksus district agent (nobetsu.agent).
 
 Every tool reads files the pipeline already produced (web/public/data after `make data`, plus the
 NDVI cache) and returns small, rounded JSON. The agent may only state numbers that one of these tools
