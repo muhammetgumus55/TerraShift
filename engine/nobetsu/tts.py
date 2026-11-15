@@ -51,7 +51,7 @@ def piper_synthesize(lang: str, text: str) -> bytes:
         wav, mp3 = Path(d) / "a.wav", Path(d) / "a.mp3"
         with wave.open(str(wav), "wb") as wf:
             _piper_cache[name].synthesize_wav(text, wf)
-        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(wav), "-ac", "1", "-b:a", "64k", str(mp3)], check=True)
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(wav), "-ac", "1", "-ar", "22050", "-b:a", "32k", str(mp3)], check=True)
         return mp3.read_bytes()
 MODEL_ID = "eleven_multilingual_v2"
 OUTPUT_FORMAT = "mp3_22050_32"

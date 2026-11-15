@@ -1,7 +1,7 @@
 {
  "schema_version": "1.0",
  "mock": false,
- "generated_at": "2026-11-15T09:11:18Z",
+ "generated_at": "2026-11-15T10:24:18Z",
  "location_id": "bogazliyan",
  "model": null,
  "type": "model",
@@ -15,16 +15,16 @@
        0,
        28
       ],
-      "tr": "Nadas yılı yağışı toprakta biriktirir: buğday ekiminde ortanca 28 mm su kalıyor; nohut sonrasında 0 mm, mercimek sonrasında 0 mm.",
-      "en": "The fallow year stores rain in the soil: about 28 mm is left at wheat sowing (median); after chickpea 0 mm, after lentil 0 mm."
+      "tr": "Nadas yılında tarla boş bırakılır ve yağmur suyu toprakta birikir: buğday ekimine ortanca 28 mm su kalır; nohut sonrasında 0 mm, mercimek sonrasında 0 mm.",
+      "en": "In the fallow year the field rests and rain is stored in the soil: about 28 mm is left when wheat is sown (median); after chickpea 0 mm, after lentil 0 mm."
      },
      {
       "id": "wheat",
       "numbers": [
        46
       ],
-      "tr": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %46 kadarını alıyor.",
-      "en": "The next wheat reaches about 46 % of its water-unlimited yield (median)."
+      "tr": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %46 kadarını alır.",
+      "en": "The wheat that follows gets about 46 % of the crop it would give with enough water (median)."
      },
      {
       "id": "soil",
@@ -32,8 +32,8 @@
        85,
        460
       ],
-      "tr": "İki yılda tarla ortanca 460 gün çıplak kalıyor, bunun 85 günü rüzgârlı ve kuru.",
-      "en": "Over two years the field is bare about 460 days, 85 of them windy and dry."
+      "tr": "İki yıl içinde tarla ortanca 460 gün boş ve çıplak kalır, bunun 85 günü rüzgârlı ve kurudur.",
+      "en": "Over two years the field lies bare about 460 days, 85 of them windy and dry."
      },
      {
       "id": "dry",
@@ -41,71 +41,102 @@
        20,
        36
       ],
-      "tr": "Yağış %20 azalırsa sonraki buğdayın oranı %36 düzeyine iner.",
-      "en": "If rain were 20 % lower, the next wheat would reach about 36 %."
+      "tr": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %36 düzeyine iner.",
+      "en": "If rain were 20 % lower, the following wheat would get about 36 %."
+     }
+    ],
+    "points": [
+     {
+      "id": "most_water",
+      "tr": "buğday ekimine en çok suyu bırakır",
+      "en": "leaves the most water for wheat sowing"
+     },
+     {
+      "id": "best_wheat",
+      "tr": "ardından gelen buğday en yüksek oranı alır",
+      "en": "the following wheat gets the highest share"
+     },
+     {
+      "id": "bare_long",
+      "tr": "tarla uzun süre boş ve çıplak kalır",
+      "en": "the field lies bare for a long time"
      }
     ],
     "tr": {
-     "text": "Nadas yılı yağışı toprakta biriktirir: buğday ekiminde ortanca 28 mm su kalıyor; nohut sonrasında 0 mm, mercimek sonrasında 0 mm. Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %46 kadarını alıyor. İki yılda tarla ortanca 460 gün çıplak kalıyor, bunun 85 günü rüzgârlı ve kuru. Yağış %20 azalırsa sonraki buğdayın oranı %36 düzeyine iner.",
+     "text": "Bu tarlada nadas öne çıkıyor: buğday ekimine en çok suyu bırakır ve ardından gelen buğday en yüksek oranı alır. Nadas yılında tarla boş bırakılır ve yağmur suyu toprakta birikir: buğday ekimine ortanca 28 mm su kalır; nohut sonrasında 0 mm, mercimek sonrasında 0 mm. Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %46 kadarını alır. İki yıl içinde tarla ortanca 460 gün boş ve çıplak kalır, bunun 85 günü rüzgârlı ve kurudur. Yağmur %20 az yağsa, ardından gelen buğdayın oranı %36 düzeyine iner.",
      "sentences": [
       {
-       "text": "Nadas yılı yağışı toprakta biriktirir: buğday ekiminde ortanca 28 mm su kalıyor; nohut sonrasında 0 mm, mercimek sonrasında 0 mm.",
+       "text": "Bu tarlada nadas öne çıkıyor: buğday ekimine en çok suyu bırakır ve ardından gelen buğday en yüksek oranı alır.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Nadas yılında tarla boş bırakılır ve yağmur suyu toprakta birikir: buğday ekimine ortanca 28 mm su kalır; nohut sonrasında 0 mm, mercimek sonrasında 0 mm.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %46 kadarını alıyor.",
+       "text": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %46 kadarını alır.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "İki yılda tarla ortanca 460 gün çıplak kalıyor, bunun 85 günü rüzgârlı ve kuru.",
+       "text": "İki yıl içinde tarla ortanca 460 gün boş ve çıplak kalır, bunun 85 günü rüzgârlı ve kurudur.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Yağış %20 azalırsa sonraki buğdayın oranı %36 düzeyine iner.",
+       "text": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %36 düzeyine iner.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/shallow/fallow_wheat.tr.mp3"
     },
     "en": {
-     "text": "The fallow year stores rain in the soil: about 28 mm is left at wheat sowing (median); after chickpea 0 mm, after lentil 0 mm. The next wheat reaches about 46 % of its water-unlimited yield (median). Over two years the field is bare about 460 days, 85 of them windy and dry. If rain were 20 % lower, the next wheat would reach about 36 %.",
+     "text": "Fallow comes out on top for this field: leaves the most water for wheat sowing and the following wheat gets the highest share. In the fallow year the field rests and rain is stored in the soil: about 28 mm is left when wheat is sown (median); after chickpea 0 mm, after lentil 0 mm. The wheat that follows gets about 46 % of the crop it would give with enough water (median). Over two years the field lies bare about 460 days, 85 of them windy and dry. If rain were 20 % lower, the following wheat would get about 36 %.",
      "sentences": [
       {
-       "text": "The fallow year stores rain in the soil: about 28 mm is left at wheat sowing (median); after chickpea 0 mm, after lentil 0 mm.",
+       "text": "Fallow comes out on top for this field: leaves the most water for wheat sowing and the following wheat gets the highest share.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "In the fallow year the field rests and rain is stored in the soil: about 28 mm is left when wheat is sown (median); after chickpea 0 mm, after lentil 0 mm.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "The next wheat reaches about 46 % of its water-unlimited yield (median).",
+       "text": "The wheat that follows gets about 46 % of the crop it would give with enough water (median).",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "Over two years the field is bare about 460 days, 85 of them windy and dry.",
+       "text": "Over two years the field lies bare about 460 days, 85 of them windy and dry.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "If rain were 20 % lower, the next wheat would reach about 36 %.",
+       "text": "If rain were 20 % lower, the following wheat would get about 36 %.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/shallow/fallow_wheat.en.mp3"
     }
    },
    "chickpea_wheat": {
@@ -116,8 +147,8 @@
        0,
        28
       ],
-      "tr": "Nohut toprağın suyunu kullanır: buğday ekiminde ortanca 0 mm su kalıyor, nadastan sonra 28 mm.",
-      "en": "Chickpea uses the soil's water: about 0 mm is left at wheat sowing (median), 28 mm after fallow."
+      "tr": "Nohut toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 0 mm su kalır, nadastan sonra ise 28 mm.",
+      "en": "Chickpea uses part of the soil's water itself, so about 0 mm is left when wheat is sown (median), against 28 mm after fallow."
      },
      {
       "id": "wheat",
@@ -125,8 +156,8 @@
        41,
        46
       ],
-      "tr": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde.",
-      "en": "The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %."
+      "tr": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46.",
+      "en": "The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %."
      },
      {
       "id": "soil",
@@ -136,8 +167,8 @@
        332,
        460
       ],
-      "tr": "İki yılda tarla ortanca 332 gün çıplak kalıyor, bunun 60 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün.",
-      "en": "Over two years the field is bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days."
+      "tr": "İki yıl içinde tarla ortanca 332 gün boş ve çıplak kalır, bunun 60 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün.",
+      "en": "Over two years the field lies bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days."
      },
      {
       "id": "legume",
@@ -145,22 +176,22 @@
        20,
        27
       ],
-      "tr": "Nohut ortanca yılda suyun izin verdiği verimin %27 kadarını alıyor; kötü yıllarda (10 yılda 1) %20 düzeyine düşüyor.",
-      "en": "Chickpea reaches about 27 % of its water-limited potential in a median year and 20 % in a bad year (1 in 10)."
+      "tr": "Nohut normal bir yılda suyun izin verdiği ürünün %27 kadarını verir; on yılda bir gelen kötü yıllarda %20 düzeyine iner.",
+      "en": "In a normal year chickpea gives about 27 % of what the water allows; in the bad year that comes once in ten, about 20 %."
      },
      {
       "id": "nitrogen",
       "numbers": [],
-      "tr": "Nohut havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
-      "en": "Chickpea fixes nitrogen from the air; a soil test shows how much."
+      "tr": "Nohut kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
+      "en": "Chickpea fixes nitrogen from the air with its roots; a soil test shows how much."
      },
      {
       "id": "tillage",
       "numbers": [
        3
       ],
-      "tr": "Yılda yaklaşık 3 kez toprak işleniyor; nadasta 3 kez.",
-      "en": "The soil is tilled about 3 times a year; 3 times with fallow."
+      "tr": "Toprak yılda yaklaşık 3 kez işlenir; nadasta 3 kez.",
+      "en": "The soil is worked about 3 times a year; 3 times with fallow."
      },
      {
       "id": "dry",
@@ -168,107 +199,143 @@
        20,
        33
       ],
-      "tr": "Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
-      "en": "If rain were 20 % lower, the next wheat would reach about 33 %."
+      "tr": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
+      "en": "If rain were 20 % lower, the following wheat would get about 33 %."
+     }
+    ],
+    "points": [
+     {
+      "id": "harvest",
+      "tr": "boş kalacak yılda tarladan bir ürün alınır",
+      "en": "the field gives a crop in the year it would otherwise rest"
+     },
+     {
+      "id": "nitrogen",
+      "tr": "havadaki azotu toprağa bağlar",
+      "en": "fixes nitrogen from the air"
+     },
+     {
+      "id": "less_bare",
+      "tr": "tarla nadasa göre daha az gün çıplak kalır",
+      "en": "the field lies bare fewer days than with fallow"
+     },
+     {
+      "id": "less_water",
+      "tr": "buğday ekimine nadasa göre daha az su kalır",
+      "en": "less water is left for wheat than after fallow"
      }
     ],
     "tr": {
-     "text": "Nohut toprağın suyunu kullanır: buğday ekiminde ortanca 0 mm su kalıyor, nadastan sonra 28 mm. Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde. İki yılda tarla ortanca 332 gün çıplak kalıyor, bunun 60 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün. Nohut ortanca yılda suyun izin verdiği verimin %27 kadarını alıyor; kötü yıllarda (10 yılda 1) %20 düzeyine düşüyor. Nohut havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir. Yılda yaklaşık 3 kez toprak işleniyor; nadasta 3 kez. Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
+     "text": "Bu tarlada nohut öne çıkıyor: boş kalacak yılda tarladan bir ürün alınır ve havadaki azotu toprağa bağlar. Nohut toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 0 mm su kalır, nadastan sonra ise 28 mm. Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46. İki yıl içinde tarla ortanca 332 gün boş ve çıplak kalır, bunun 60 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün. Nohut normal bir yılda suyun izin verdiği ürünün %27 kadarını verir; on yılda bir gelen kötü yıllarda %20 düzeyine iner. Nohut kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir. Toprak yılda yaklaşık 3 kez işlenir; nadasta 3 kez. Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
      "sentences": [
       {
-       "text": "Nohut toprağın suyunu kullanır: buğday ekiminde ortanca 0 mm su kalıyor, nadastan sonra 28 mm.",
+       "text": "Bu tarlada nohut öne çıkıyor: boş kalacak yılda tarladan bir ürün alınır ve havadaki azotu toprağa bağlar.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Nohut toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 0 mm su kalır, nadastan sonra ise 28 mm.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde.",
+       "text": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "İki yılda tarla ortanca 332 gün çıplak kalıyor, bunun 60 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün.",
+       "text": "İki yıl içinde tarla ortanca 332 gün boş ve çıplak kalır, bunun 60 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Nohut ortanca yılda suyun izin verdiği verimin %27 kadarını alıyor; kötü yıllarda (10 yılda 1) %20 düzeyine düşüyor.",
+       "text": "Nohut normal bir yılda suyun izin verdiği ürünün %27 kadarını verir; on yılda bir gelen kötü yıllarda %20 düzeyine iner.",
        "fact_ids": [
         "legume"
        ]
       },
       {
-       "text": "Nohut havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
+       "text": "Nohut kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
        "fact_ids": [
         "nitrogen"
        ]
       },
       {
-       "text": "Yılda yaklaşık 3 kez toprak işleniyor; nadasta 3 kez.",
+       "text": "Toprak yılda yaklaşık 3 kez işlenir; nadasta 3 kez.",
        "fact_ids": [
         "tillage"
        ]
       },
       {
-       "text": "Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
+       "text": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/shallow/chickpea_wheat.tr.mp3"
     },
     "en": {
-     "text": "Chickpea uses the soil's water: about 0 mm is left at wheat sowing (median), 28 mm after fallow. The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %. Over two years the field is bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days. Chickpea reaches about 27 % of its water-limited potential in a median year and 20 % in a bad year (1 in 10). Chickpea fixes nitrogen from the air; a soil test shows how much. The soil is tilled about 3 times a year; 3 times with fallow. If rain were 20 % lower, the next wheat would reach about 33 %.",
+     "text": "Chickpea comes out on top for this field: the field gives a crop in the year it would otherwise rest and fixes nitrogen from the air. Chickpea uses part of the soil's water itself, so about 0 mm is left when wheat is sown (median), against 28 mm after fallow. The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %. Over two years the field lies bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days. In a normal year chickpea gives about 27 % of what the water allows; in the bad year that comes once in ten, about 20 %. Chickpea fixes nitrogen from the air with its roots; a soil test shows how much. The soil is worked about 3 times a year; 3 times with fallow. If rain were 20 % lower, the following wheat would get about 33 %.",
      "sentences": [
       {
-       "text": "Chickpea uses the soil's water: about 0 mm is left at wheat sowing (median), 28 mm after fallow.",
+       "text": "Chickpea comes out on top for this field: the field gives a crop in the year it would otherwise rest and fixes nitrogen from the air.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Chickpea uses part of the soil's water itself, so about 0 mm is left when wheat is sown (median), against 28 mm after fallow.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %.",
+       "text": "The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "Over two years the field is bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days.",
+       "text": "Over two years the field lies bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Chickpea reaches about 27 % of its water-limited potential in a median year and 20 % in a bad year (1 in 10).",
+       "text": "In a normal year chickpea gives about 27 % of what the water allows; in the bad year that comes once in ten, about 20 %.",
        "fact_ids": [
         "legume"
        ]
       },
       {
-       "text": "Chickpea fixes nitrogen from the air; a soil test shows how much.",
+       "text": "Chickpea fixes nitrogen from the air with its roots; a soil test shows how much.",
        "fact_ids": [
         "nitrogen"
        ]
       },
       {
-       "text": "The soil is tilled about 3 times a year; 3 times with fallow.",
+       "text": "The soil is worked about 3 times a year; 3 times with fallow.",
        "fact_ids": [
         "tillage"
        ]
       },
       {
-       "text": "If rain were 20 % lower, the next wheat would reach about 33 %.",
+       "text": "If rain were 20 % lower, the following wheat would get about 33 %.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/shallow/chickpea_wheat.en.mp3"
     }
    },
    "lentil_wheat": {
@@ -279,8 +346,8 @@
        0,
        28
       ],
-      "tr": "Mercimek toprağın suyunu kullanır: buğday ekiminde ortanca 0 mm su kalıyor, nadastan sonra 28 mm.",
-      "en": "Lentil uses the soil's water: about 0 mm is left at wheat sowing (median), 28 mm after fallow."
+      "tr": "Mercimek toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 0 mm su kalır, nadastan sonra ise 28 mm.",
+      "en": "Lentil uses part of the soil's water itself, so about 0 mm is left when wheat is sown (median), against 28 mm after fallow."
      },
      {
       "id": "wheat",
@@ -288,8 +355,8 @@
        41,
        46
       ],
-      "tr": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde.",
-      "en": "The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %."
+      "tr": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46.",
+      "en": "The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %."
      },
      {
       "id": "soil",
@@ -299,8 +366,8 @@
        310,
        460
       ],
-      "tr": "İki yılda tarla ortanca 310 gün çıplak kalıyor, bunun 54 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün.",
-      "en": "Over two years the field is bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days."
+      "tr": "İki yıl içinde tarla ortanca 310 gün boş ve çıplak kalır, bunun 54 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün.",
+      "en": "Over two years the field lies bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days."
      },
      {
       "id": "legume",
@@ -308,14 +375,14 @@
        23,
        30
       ],
-      "tr": "Mercimek ortanca yılda suyun izin verdiği verimin %30 kadarını alıyor; kötü yıllarda (10 yılda 1) %23 düzeyine düşüyor.",
-      "en": "Lentil reaches about 30 % of its water-limited potential in a median year and 23 % in a bad year (1 in 10)."
+      "tr": "Mercimek normal bir yılda suyun izin verdiği ürünün %30 kadarını verir; on yılda bir gelen kötü yıllarda %23 düzeyine iner.",
+      "en": "In a normal year lentil gives about 30 % of what the water allows; in the bad year that comes once in ten, about 23 %."
      },
      {
       "id": "nitrogen",
       "numbers": [],
-      "tr": "Mercimek havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
-      "en": "Lentil fixes nitrogen from the air; a soil test shows how much."
+      "tr": "Mercimek kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
+      "en": "Lentil fixes nitrogen from the air with its roots; a soil test shows how much."
      },
      {
       "id": "tillage",
@@ -323,8 +390,8 @@
        2,
        3
       ],
-      "tr": "Yılda yaklaşık 2 kez toprak işleniyor; nadasta 3 kez.",
-      "en": "The soil is tilled about 2 times a year; 3 times with fallow."
+      "tr": "Toprak yılda yaklaşık 2 kez işlenir; nadasta 3 kez.",
+      "en": "The soil is worked about 2 times a year; 3 times with fallow."
      },
      {
       "id": "dry",
@@ -332,107 +399,143 @@
        20,
        33
       ],
-      "tr": "Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
-      "en": "If rain were 20 % lower, the next wheat would reach about 33 %."
+      "tr": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
+      "en": "If rain were 20 % lower, the following wheat would get about 33 %."
+     }
+    ],
+    "points": [
+     {
+      "id": "harvest",
+      "tr": "boş kalacak yılda tarladan bir ürün alınır",
+      "en": "the field gives a crop in the year it would otherwise rest"
+     },
+     {
+      "id": "nitrogen",
+      "tr": "havadaki azotu toprağa bağlar",
+      "en": "fixes nitrogen from the air"
+     },
+     {
+      "id": "less_bare",
+      "tr": "tarla nadasa göre daha az gün çıplak kalır",
+      "en": "the field lies bare fewer days than with fallow"
+     },
+     {
+      "id": "less_water",
+      "tr": "buğday ekimine nadasa göre daha az su kalır",
+      "en": "less water is left for wheat than after fallow"
      }
     ],
     "tr": {
-     "text": "Mercimek toprağın suyunu kullanır: buğday ekiminde ortanca 0 mm su kalıyor, nadastan sonra 28 mm. Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde. İki yılda tarla ortanca 310 gün çıplak kalıyor, bunun 54 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün. Mercimek ortanca yılda suyun izin verdiği verimin %30 kadarını alıyor; kötü yıllarda (10 yılda 1) %23 düzeyine düşüyor. Mercimek havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir. Yılda yaklaşık 2 kez toprak işleniyor; nadasta 3 kez. Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
+     "text": "Bu tarlada mercimek öne çıkıyor: boş kalacak yılda tarladan bir ürün alınır ve havadaki azotu toprağa bağlar. Mercimek toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 0 mm su kalır, nadastan sonra ise 28 mm. Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46. İki yıl içinde tarla ortanca 310 gün boş ve çıplak kalır, bunun 54 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün. Mercimek normal bir yılda suyun izin verdiği ürünün %30 kadarını verir; on yılda bir gelen kötü yıllarda %23 düzeyine iner. Mercimek kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir. Toprak yılda yaklaşık 2 kez işlenir; nadasta 3 kez. Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
      "sentences": [
       {
-       "text": "Mercimek toprağın suyunu kullanır: buğday ekiminde ortanca 0 mm su kalıyor, nadastan sonra 28 mm.",
+       "text": "Bu tarlada mercimek öne çıkıyor: boş kalacak yılda tarladan bir ürün alınır ve havadaki azotu toprağa bağlar.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Mercimek toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 0 mm su kalır, nadastan sonra ise 28 mm.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde.",
+       "text": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "İki yılda tarla ortanca 310 gün çıplak kalıyor, bunun 54 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün.",
+       "text": "İki yıl içinde tarla ortanca 310 gün boş ve çıplak kalır, bunun 54 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Mercimek ortanca yılda suyun izin verdiği verimin %30 kadarını alıyor; kötü yıllarda (10 yılda 1) %23 düzeyine düşüyor.",
+       "text": "Mercimek normal bir yılda suyun izin verdiği ürünün %30 kadarını verir; on yılda bir gelen kötü yıllarda %23 düzeyine iner.",
        "fact_ids": [
         "legume"
        ]
       },
       {
-       "text": "Mercimek havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
+       "text": "Mercimek kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
        "fact_ids": [
         "nitrogen"
        ]
       },
       {
-       "text": "Yılda yaklaşık 2 kez toprak işleniyor; nadasta 3 kez.",
+       "text": "Toprak yılda yaklaşık 2 kez işlenir; nadasta 3 kez.",
        "fact_ids": [
         "tillage"
        ]
       },
       {
-       "text": "Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
+       "text": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/shallow/lentil_wheat.tr.mp3"
     },
     "en": {
-     "text": "Lentil uses the soil's water: about 0 mm is left at wheat sowing (median), 28 mm after fallow. The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %. Over two years the field is bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days. Lentil reaches about 30 % of its water-limited potential in a median year and 23 % in a bad year (1 in 10). Lentil fixes nitrogen from the air; a soil test shows how much. The soil is tilled about 2 times a year; 3 times with fallow. If rain were 20 % lower, the next wheat would reach about 33 %.",
+     "text": "Lentil comes out on top for this field: the field gives a crop in the year it would otherwise rest and fixes nitrogen from the air. Lentil uses part of the soil's water itself, so about 0 mm is left when wheat is sown (median), against 28 mm after fallow. The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %. Over two years the field lies bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days. In a normal year lentil gives about 30 % of what the water allows; in the bad year that comes once in ten, about 23 %. Lentil fixes nitrogen from the air with its roots; a soil test shows how much. The soil is worked about 2 times a year; 3 times with fallow. If rain were 20 % lower, the following wheat would get about 33 %.",
      "sentences": [
       {
-       "text": "Lentil uses the soil's water: about 0 mm is left at wheat sowing (median), 28 mm after fallow.",
+       "text": "Lentil comes out on top for this field: the field gives a crop in the year it would otherwise rest and fixes nitrogen from the air.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Lentil uses part of the soil's water itself, so about 0 mm is left when wheat is sown (median), against 28 mm after fallow.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %.",
+       "text": "The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "Over two years the field is bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days.",
+       "text": "Over two years the field lies bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Lentil reaches about 30 % of its water-limited potential in a median year and 23 % in a bad year (1 in 10).",
+       "text": "In a normal year lentil gives about 30 % of what the water allows; in the bad year that comes once in ten, about 23 %.",
        "fact_ids": [
         "legume"
        ]
       },
       {
-       "text": "Lentil fixes nitrogen from the air; a soil test shows how much.",
+       "text": "Lentil fixes nitrogen from the air with its roots; a soil test shows how much.",
        "fact_ids": [
         "nitrogen"
        ]
       },
       {
-       "text": "The soil is tilled about 2 times a year; 3 times with fallow.",
+       "text": "The soil is worked about 2 times a year; 3 times with fallow.",
        "fact_ids": [
         "tillage"
        ]
       },
       {
-       "text": "If rain were 20 % lower, the next wheat would reach about 33 %.",
+       "text": "If rain were 20 % lower, the following wheat would get about 33 %.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/shallow/lentil_wheat.en.mp3"
     }
    }
   },
@@ -446,16 +549,16 @@
        4,
        28
       ],
-      "tr": "Nadas yılı yağışı toprakta biriktirir: buğday ekiminde ortanca 28 mm su kalıyor; nohut sonrasında 0 mm, mercimek sonrasında 4 mm.",
-      "en": "The fallow year stores rain in the soil: about 28 mm is left at wheat sowing (median); after chickpea 0 mm, after lentil 4 mm."
+      "tr": "Nadas yılında tarla boş bırakılır ve yağmur suyu toprakta birikir: buğday ekimine ortanca 28 mm su kalır; nohut sonrasında 0 mm, mercimek sonrasında 4 mm.",
+      "en": "In the fallow year the field rests and rain is stored in the soil: about 28 mm is left when wheat is sown (median); after chickpea 0 mm, after lentil 4 mm."
      },
      {
       "id": "wheat",
       "numbers": [
        46
       ],
-      "tr": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %46 kadarını alıyor.",
-      "en": "The next wheat reaches about 46 % of its water-unlimited yield (median)."
+      "tr": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %46 kadarını alır.",
+      "en": "The wheat that follows gets about 46 % of the crop it would give with enough water (median)."
      },
      {
       "id": "soil",
@@ -463,8 +566,8 @@
        85,
        460
       ],
-      "tr": "İki yılda tarla ortanca 460 gün çıplak kalıyor, bunun 85 günü rüzgârlı ve kuru.",
-      "en": "Over two years the field is bare about 460 days, 85 of them windy and dry."
+      "tr": "İki yıl içinde tarla ortanca 460 gün boş ve çıplak kalır, bunun 85 günü rüzgârlı ve kurudur.",
+      "en": "Over two years the field lies bare about 460 days, 85 of them windy and dry."
      },
      {
       "id": "dry",
@@ -472,71 +575,102 @@
        20,
        35
       ],
-      "tr": "Yağış %20 azalırsa sonraki buğdayın oranı %35 düzeyine iner.",
-      "en": "If rain were 20 % lower, the next wheat would reach about 35 %."
+      "tr": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %35 düzeyine iner.",
+      "en": "If rain were 20 % lower, the following wheat would get about 35 %."
+     }
+    ],
+    "points": [
+     {
+      "id": "most_water",
+      "tr": "buğday ekimine en çok suyu bırakır",
+      "en": "leaves the most water for wheat sowing"
+     },
+     {
+      "id": "best_wheat",
+      "tr": "ardından gelen buğday en yüksek oranı alır",
+      "en": "the following wheat gets the highest share"
+     },
+     {
+      "id": "bare_long",
+      "tr": "tarla uzun süre boş ve çıplak kalır",
+      "en": "the field lies bare for a long time"
      }
     ],
     "tr": {
-     "text": "Nadas yılı yağışı toprakta biriktirir: buğday ekiminde ortanca 28 mm su kalıyor; nohut sonrasında 0 mm, mercimek sonrasında 4 mm. Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %46 kadarını alıyor. İki yılda tarla ortanca 460 gün çıplak kalıyor, bunun 85 günü rüzgârlı ve kuru. Yağış %20 azalırsa sonraki buğdayın oranı %35 düzeyine iner.",
+     "text": "Bu tarlada nadas öne çıkıyor: buğday ekimine en çok suyu bırakır ve ardından gelen buğday en yüksek oranı alır. Nadas yılında tarla boş bırakılır ve yağmur suyu toprakta birikir: buğday ekimine ortanca 28 mm su kalır; nohut sonrasında 0 mm, mercimek sonrasında 4 mm. Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %46 kadarını alır. İki yıl içinde tarla ortanca 460 gün boş ve çıplak kalır, bunun 85 günü rüzgârlı ve kurudur. Yağmur %20 az yağsa, ardından gelen buğdayın oranı %35 düzeyine iner.",
      "sentences": [
       {
-       "text": "Nadas yılı yağışı toprakta biriktirir: buğday ekiminde ortanca 28 mm su kalıyor; nohut sonrasında 0 mm, mercimek sonrasında 4 mm.",
+       "text": "Bu tarlada nadas öne çıkıyor: buğday ekimine en çok suyu bırakır ve ardından gelen buğday en yüksek oranı alır.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Nadas yılında tarla boş bırakılır ve yağmur suyu toprakta birikir: buğday ekimine ortanca 28 mm su kalır; nohut sonrasında 0 mm, mercimek sonrasında 4 mm.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %46 kadarını alıyor.",
+       "text": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %46 kadarını alır.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "İki yılda tarla ortanca 460 gün çıplak kalıyor, bunun 85 günü rüzgârlı ve kuru.",
+       "text": "İki yıl içinde tarla ortanca 460 gün boş ve çıplak kalır, bunun 85 günü rüzgârlı ve kurudur.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Yağış %20 azalırsa sonraki buğdayın oranı %35 düzeyine iner.",
+       "text": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %35 düzeyine iner.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/medium/fallow_wheat.tr.mp3"
     },
     "en": {
-     "text": "The fallow year stores rain in the soil: about 28 mm is left at wheat sowing (median); after chickpea 0 mm, after lentil 4 mm. The next wheat reaches about 46 % of its water-unlimited yield (median). Over two years the field is bare about 460 days, 85 of them windy and dry. If rain were 20 % lower, the next wheat would reach about 35 %.",
+     "text": "Fallow comes out on top for this field: leaves the most water for wheat sowing and the following wheat gets the highest share. In the fallow year the field rests and rain is stored in the soil: about 28 mm is left when wheat is sown (median); after chickpea 0 mm, after lentil 4 mm. The wheat that follows gets about 46 % of the crop it would give with enough water (median). Over two years the field lies bare about 460 days, 85 of them windy and dry. If rain were 20 % lower, the following wheat would get about 35 %.",
      "sentences": [
       {
-       "text": "The fallow year stores rain in the soil: about 28 mm is left at wheat sowing (median); after chickpea 0 mm, after lentil 4 mm.",
+       "text": "Fallow comes out on top for this field: leaves the most water for wheat sowing and the following wheat gets the highest share.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "In the fallow year the field rests and rain is stored in the soil: about 28 mm is left when wheat is sown (median); after chickpea 0 mm, after lentil 4 mm.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "The next wheat reaches about 46 % of its water-unlimited yield (median).",
+       "text": "The wheat that follows gets about 46 % of the crop it would give with enough water (median).",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "Over two years the field is bare about 460 days, 85 of them windy and dry.",
+       "text": "Over two years the field lies bare about 460 days, 85 of them windy and dry.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "If rain were 20 % lower, the next wheat would reach about 35 %.",
+       "text": "If rain were 20 % lower, the following wheat would get about 35 %.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/medium/fallow_wheat.en.mp3"
     }
    },
    "chickpea_wheat": {
@@ -547,8 +681,8 @@
        0,
        28
       ],
-      "tr": "Nohut toprağın suyunu kullanır: buğday ekiminde ortanca 0 mm su kalıyor, nadastan sonra 28 mm.",
-      "en": "Chickpea uses the soil's water: about 0 mm is left at wheat sowing (median), 28 mm after fallow."
+      "tr": "Nohut toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 0 mm su kalır, nadastan sonra ise 28 mm.",
+      "en": "Chickpea uses part of the soil's water itself, so about 0 mm is left when wheat is sown (median), against 28 mm after fallow."
      },
      {
       "id": "wheat",
@@ -556,8 +690,8 @@
        41,
        46
       ],
-      "tr": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde.",
-      "en": "The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %."
+      "tr": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46.",
+      "en": "The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %."
      },
      {
       "id": "soil",
@@ -567,8 +701,8 @@
        332,
        460
       ],
-      "tr": "İki yılda tarla ortanca 332 gün çıplak kalıyor, bunun 60 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün.",
-      "en": "Over two years the field is bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days."
+      "tr": "İki yıl içinde tarla ortanca 332 gün boş ve çıplak kalır, bunun 60 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün.",
+      "en": "Over two years the field lies bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days."
      },
      {
       "id": "legume",
@@ -576,22 +710,22 @@
        20,
        27
       ],
-      "tr": "Nohut ortanca yılda suyun izin verdiği verimin %27 kadarını alıyor; kötü yıllarda (10 yılda 1) %20 düzeyine düşüyor.",
-      "en": "Chickpea reaches about 27 % of its water-limited potential in a median year and 20 % in a bad year (1 in 10)."
+      "tr": "Nohut normal bir yılda suyun izin verdiği ürünün %27 kadarını verir; on yılda bir gelen kötü yıllarda %20 düzeyine iner.",
+      "en": "In a normal year chickpea gives about 27 % of what the water allows; in the bad year that comes once in ten, about 20 %."
      },
      {
       "id": "nitrogen",
       "numbers": [],
-      "tr": "Nohut havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
-      "en": "Chickpea fixes nitrogen from the air; a soil test shows how much."
+      "tr": "Nohut kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
+      "en": "Chickpea fixes nitrogen from the air with its roots; a soil test shows how much."
      },
      {
       "id": "tillage",
       "numbers": [
        3
       ],
-      "tr": "Yılda yaklaşık 3 kez toprak işleniyor; nadasta 3 kez.",
-      "en": "The soil is tilled about 3 times a year; 3 times with fallow."
+      "tr": "Toprak yılda yaklaşık 3 kez işlenir; nadasta 3 kez.",
+      "en": "The soil is worked about 3 times a year; 3 times with fallow."
      },
      {
       "id": "dry",
@@ -599,107 +733,143 @@
        20,
        33
       ],
-      "tr": "Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
-      "en": "If rain were 20 % lower, the next wheat would reach about 33 %."
+      "tr": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
+      "en": "If rain were 20 % lower, the following wheat would get about 33 %."
+     }
+    ],
+    "points": [
+     {
+      "id": "harvest",
+      "tr": "boş kalacak yılda tarladan bir ürün alınır",
+      "en": "the field gives a crop in the year it would otherwise rest"
+     },
+     {
+      "id": "nitrogen",
+      "tr": "havadaki azotu toprağa bağlar",
+      "en": "fixes nitrogen from the air"
+     },
+     {
+      "id": "less_bare",
+      "tr": "tarla nadasa göre daha az gün çıplak kalır",
+      "en": "the field lies bare fewer days than with fallow"
+     },
+     {
+      "id": "less_water",
+      "tr": "buğday ekimine nadasa göre daha az su kalır",
+      "en": "less water is left for wheat than after fallow"
      }
     ],
     "tr": {
-     "text": "Nohut toprağın suyunu kullanır: buğday ekiminde ortanca 0 mm su kalıyor, nadastan sonra 28 mm. Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde. İki yılda tarla ortanca 332 gün çıplak kalıyor, bunun 60 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün. Nohut ortanca yılda suyun izin verdiği verimin %27 kadarını alıyor; kötü yıllarda (10 yılda 1) %20 düzeyine düşüyor. Nohut havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir. Yılda yaklaşık 3 kez toprak işleniyor; nadasta 3 kez. Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
+     "text": "Bu tarlada nohut öne çıkıyor: boş kalacak yılda tarladan bir ürün alınır ve havadaki azotu toprağa bağlar. Nohut toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 0 mm su kalır, nadastan sonra ise 28 mm. Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46. İki yıl içinde tarla ortanca 332 gün boş ve çıplak kalır, bunun 60 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün. Nohut normal bir yılda suyun izin verdiği ürünün %27 kadarını verir; on yılda bir gelen kötü yıllarda %20 düzeyine iner. Nohut kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir. Toprak yılda yaklaşık 3 kez işlenir; nadasta 3 kez. Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
      "sentences": [
       {
-       "text": "Nohut toprağın suyunu kullanır: buğday ekiminde ortanca 0 mm su kalıyor, nadastan sonra 28 mm.",
+       "text": "Bu tarlada nohut öne çıkıyor: boş kalacak yılda tarladan bir ürün alınır ve havadaki azotu toprağa bağlar.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Nohut toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 0 mm su kalır, nadastan sonra ise 28 mm.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde.",
+       "text": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "İki yılda tarla ortanca 332 gün çıplak kalıyor, bunun 60 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün.",
+       "text": "İki yıl içinde tarla ortanca 332 gün boş ve çıplak kalır, bunun 60 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Nohut ortanca yılda suyun izin verdiği verimin %27 kadarını alıyor; kötü yıllarda (10 yılda 1) %20 düzeyine düşüyor.",
+       "text": "Nohut normal bir yılda suyun izin verdiği ürünün %27 kadarını verir; on yılda bir gelen kötü yıllarda %20 düzeyine iner.",
        "fact_ids": [
         "legume"
        ]
       },
       {
-       "text": "Nohut havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
+       "text": "Nohut kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
        "fact_ids": [
         "nitrogen"
        ]
       },
       {
-       "text": "Yılda yaklaşık 3 kez toprak işleniyor; nadasta 3 kez.",
+       "text": "Toprak yılda yaklaşık 3 kez işlenir; nadasta 3 kez.",
        "fact_ids": [
         "tillage"
        ]
       },
       {
-       "text": "Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
+       "text": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/medium/chickpea_wheat.tr.mp3"
     },
     "en": {
-     "text": "Chickpea uses the soil's water: about 0 mm is left at wheat sowing (median), 28 mm after fallow. The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %. Over two years the field is bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days. Chickpea reaches about 27 % of its water-limited potential in a median year and 20 % in a bad year (1 in 10). Chickpea fixes nitrogen from the air; a soil test shows how much. The soil is tilled about 3 times a year; 3 times with fallow. If rain were 20 % lower, the next wheat would reach about 33 %.",
+     "text": "Chickpea comes out on top for this field: the field gives a crop in the year it would otherwise rest and fixes nitrogen from the air. Chickpea uses part of the soil's water itself, so about 0 mm is left when wheat is sown (median), against 28 mm after fallow. The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %. Over two years the field lies bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days. In a normal year chickpea gives about 27 % of what the water allows; in the bad year that comes once in ten, about 20 %. Chickpea fixes nitrogen from the air with its roots; a soil test shows how much. The soil is worked about 3 times a year; 3 times with fallow. If rain were 20 % lower, the following wheat would get about 33 %.",
      "sentences": [
       {
-       "text": "Chickpea uses the soil's water: about 0 mm is left at wheat sowing (median), 28 mm after fallow.",
+       "text": "Chickpea comes out on top for this field: the field gives a crop in the year it would otherwise rest and fixes nitrogen from the air.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Chickpea uses part of the soil's water itself, so about 0 mm is left when wheat is sown (median), against 28 mm after fallow.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %.",
+       "text": "The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "Over two years the field is bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days.",
+       "text": "Over two years the field lies bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Chickpea reaches about 27 % of its water-limited potential in a median year and 20 % in a bad year (1 in 10).",
+       "text": "In a normal year chickpea gives about 27 % of what the water allows; in the bad year that comes once in ten, about 20 %.",
        "fact_ids": [
         "legume"
        ]
       },
       {
-       "text": "Chickpea fixes nitrogen from the air; a soil test shows how much.",
+       "text": "Chickpea fixes nitrogen from the air with its roots; a soil test shows how much.",
        "fact_ids": [
         "nitrogen"
        ]
       },
       {
-       "text": "The soil is tilled about 3 times a year; 3 times with fallow.",
+       "text": "The soil is worked about 3 times a year; 3 times with fallow.",
        "fact_ids": [
         "tillage"
        ]
       },
       {
-       "text": "If rain were 20 % lower, the next wheat would reach about 33 %.",
+       "text": "If rain were 20 % lower, the following wheat would get about 33 %.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/medium/chickpea_wheat.en.mp3"
     }
    },
    "lentil_wheat": {
@@ -710,8 +880,8 @@
        4,
        28
       ],
-      "tr": "Mercimek toprağın suyunu kullanır: buğday ekiminde ortanca 4 mm su kalıyor, nadastan sonra 28 mm.",
-      "en": "Lentil uses the soil's water: about 4 mm is left at wheat sowing (median), 28 mm after fallow."
+      "tr": "Mercimek toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 4 mm su kalır, nadastan sonra ise 28 mm.",
+      "en": "Lentil uses part of the soil's water itself, so about 4 mm is left when wheat is sown (median), against 28 mm after fallow."
      },
      {
       "id": "wheat",
@@ -719,8 +889,8 @@
        41,
        46
       ],
-      "tr": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde.",
-      "en": "The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %."
+      "tr": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46.",
+      "en": "The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %."
      },
      {
       "id": "soil",
@@ -730,8 +900,8 @@
        310,
        460
       ],
-      "tr": "İki yılda tarla ortanca 310 gün çıplak kalıyor, bunun 54 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün.",
-      "en": "Over two years the field is bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days."
+      "tr": "İki yıl içinde tarla ortanca 310 gün boş ve çıplak kalır, bunun 54 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün.",
+      "en": "Over two years the field lies bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days."
      },
      {
       "id": "legume",
@@ -739,14 +909,14 @@
        23,
        30
       ],
-      "tr": "Mercimek ortanca yılda suyun izin verdiği verimin %30 kadarını alıyor; kötü yıllarda (10 yılda 1) %23 düzeyine düşüyor.",
-      "en": "Lentil reaches about 30 % of its water-limited potential in a median year and 23 % in a bad year (1 in 10)."
+      "tr": "Mercimek normal bir yılda suyun izin verdiği ürünün %30 kadarını verir; on yılda bir gelen kötü yıllarda %23 düzeyine iner.",
+      "en": "In a normal year lentil gives about 30 % of what the water allows; in the bad year that comes once in ten, about 23 %."
      },
      {
       "id": "nitrogen",
       "numbers": [],
-      "tr": "Mercimek havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
-      "en": "Lentil fixes nitrogen from the air; a soil test shows how much."
+      "tr": "Mercimek kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
+      "en": "Lentil fixes nitrogen from the air with its roots; a soil test shows how much."
      },
      {
       "id": "tillage",
@@ -754,8 +924,8 @@
        2,
        3
       ],
-      "tr": "Yılda yaklaşık 2 kez toprak işleniyor; nadasta 3 kez.",
-      "en": "The soil is tilled about 2 times a year; 3 times with fallow."
+      "tr": "Toprak yılda yaklaşık 2 kez işlenir; nadasta 3 kez.",
+      "en": "The soil is worked about 2 times a year; 3 times with fallow."
      },
      {
       "id": "dry",
@@ -763,107 +933,143 @@
        20,
        33
       ],
-      "tr": "Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
-      "en": "If rain were 20 % lower, the next wheat would reach about 33 %."
+      "tr": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
+      "en": "If rain were 20 % lower, the following wheat would get about 33 %."
+     }
+    ],
+    "points": [
+     {
+      "id": "harvest",
+      "tr": "boş kalacak yılda tarladan bir ürün alınır",
+      "en": "the field gives a crop in the year it would otherwise rest"
+     },
+     {
+      "id": "nitrogen",
+      "tr": "havadaki azotu toprağa bağlar",
+      "en": "fixes nitrogen from the air"
+     },
+     {
+      "id": "less_bare",
+      "tr": "tarla nadasa göre daha az gün çıplak kalır",
+      "en": "the field lies bare fewer days than with fallow"
+     },
+     {
+      "id": "less_water",
+      "tr": "buğday ekimine nadasa göre daha az su kalır",
+      "en": "less water is left for wheat than after fallow"
      }
     ],
     "tr": {
-     "text": "Mercimek toprağın suyunu kullanır: buğday ekiminde ortanca 4 mm su kalıyor, nadastan sonra 28 mm. Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde. İki yılda tarla ortanca 310 gün çıplak kalıyor, bunun 54 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün. Mercimek ortanca yılda suyun izin verdiği verimin %30 kadarını alıyor; kötü yıllarda (10 yılda 1) %23 düzeyine düşüyor. Mercimek havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir. Yılda yaklaşık 2 kez toprak işleniyor; nadasta 3 kez. Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
+     "text": "Bu tarlada mercimek öne çıkıyor: boş kalacak yılda tarladan bir ürün alınır ve havadaki azotu toprağa bağlar. Mercimek toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 4 mm su kalır, nadastan sonra ise 28 mm. Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46. İki yıl içinde tarla ortanca 310 gün boş ve çıplak kalır, bunun 54 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün. Mercimek normal bir yılda suyun izin verdiği ürünün %30 kadarını verir; on yılda bir gelen kötü yıllarda %23 düzeyine iner. Mercimek kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir. Toprak yılda yaklaşık 2 kez işlenir; nadasta 3 kez. Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
      "sentences": [
       {
-       "text": "Mercimek toprağın suyunu kullanır: buğday ekiminde ortanca 4 mm su kalıyor, nadastan sonra 28 mm.",
+       "text": "Bu tarlada mercimek öne çıkıyor: boş kalacak yılda tarladan bir ürün alınır ve havadaki azotu toprağa bağlar.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Mercimek toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 4 mm su kalır, nadastan sonra ise 28 mm.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde.",
+       "text": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "İki yılda tarla ortanca 310 gün çıplak kalıyor, bunun 54 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün.",
+       "text": "İki yıl içinde tarla ortanca 310 gün boş ve çıplak kalır, bunun 54 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Mercimek ortanca yılda suyun izin verdiği verimin %30 kadarını alıyor; kötü yıllarda (10 yılda 1) %23 düzeyine düşüyor.",
+       "text": "Mercimek normal bir yılda suyun izin verdiği ürünün %30 kadarını verir; on yılda bir gelen kötü yıllarda %23 düzeyine iner.",
        "fact_ids": [
         "legume"
        ]
       },
       {
-       "text": "Mercimek havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
+       "text": "Mercimek kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
        "fact_ids": [
         "nitrogen"
        ]
       },
       {
-       "text": "Yılda yaklaşık 2 kez toprak işleniyor; nadasta 3 kez.",
+       "text": "Toprak yılda yaklaşık 2 kez işlenir; nadasta 3 kez.",
        "fact_ids": [
         "tillage"
        ]
       },
       {
-       "text": "Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
+       "text": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/medium/lentil_wheat.tr.mp3"
     },
     "en": {
-     "text": "Lentil uses the soil's water: about 4 mm is left at wheat sowing (median), 28 mm after fallow. The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %. Over two years the field is bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days. Lentil reaches about 30 % of its water-limited potential in a median year and 23 % in a bad year (1 in 10). Lentil fixes nitrogen from the air; a soil test shows how much. The soil is tilled about 2 times a year; 3 times with fallow. If rain were 20 % lower, the next wheat would reach about 33 %.",
+     "text": "Lentil comes out on top for this field: the field gives a crop in the year it would otherwise rest and fixes nitrogen from the air. Lentil uses part of the soil's water itself, so about 4 mm is left when wheat is sown (median), against 28 mm after fallow. The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %. Over two years the field lies bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days. In a normal year lentil gives about 30 % of what the water allows; in the bad year that comes once in ten, about 23 %. Lentil fixes nitrogen from the air with its roots; a soil test shows how much. The soil is worked about 2 times a year; 3 times with fallow. If rain were 20 % lower, the following wheat would get about 33 %.",
      "sentences": [
       {
-       "text": "Lentil uses the soil's water: about 4 mm is left at wheat sowing (median), 28 mm after fallow.",
+       "text": "Lentil comes out on top for this field: the field gives a crop in the year it would otherwise rest and fixes nitrogen from the air.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Lentil uses part of the soil's water itself, so about 4 mm is left when wheat is sown (median), against 28 mm after fallow.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %.",
+       "text": "The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "Over two years the field is bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days.",
+       "text": "Over two years the field lies bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Lentil reaches about 30 % of its water-limited potential in a median year and 23 % in a bad year (1 in 10).",
+       "text": "In a normal year lentil gives about 30 % of what the water allows; in the bad year that comes once in ten, about 23 %.",
        "fact_ids": [
         "legume"
        ]
       },
       {
-       "text": "Lentil fixes nitrogen from the air; a soil test shows how much.",
+       "text": "Lentil fixes nitrogen from the air with its roots; a soil test shows how much.",
        "fact_ids": [
         "nitrogen"
        ]
       },
       {
-       "text": "The soil is tilled about 2 times a year; 3 times with fallow.",
+       "text": "The soil is worked about 2 times a year; 3 times with fallow.",
        "fact_ids": [
         "tillage"
        ]
       },
       {
-       "text": "If rain were 20 % lower, the next wheat would reach about 33 %.",
+       "text": "If rain were 20 % lower, the following wheat would get about 33 %.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/medium/lentil_wheat.en.mp3"
     }
    }
   },
@@ -877,16 +1083,16 @@
        12,
        32
       ],
-      "tr": "Nadas yılı yağışı toprakta biriktirir: buğday ekiminde ortanca 32 mm su kalıyor; nohut sonrasında 6 mm, mercimek sonrasında 12 mm.",
-      "en": "The fallow year stores rain in the soil: about 32 mm is left at wheat sowing (median); after chickpea 6 mm, after lentil 12 mm."
+      "tr": "Nadas yılında tarla boş bırakılır ve yağmur suyu toprakta birikir: buğday ekimine ortanca 32 mm su kalır; nohut sonrasında 6 mm, mercimek sonrasında 12 mm.",
+      "en": "In the fallow year the field rests and rain is stored in the soil: about 32 mm is left when wheat is sown (median); after chickpea 6 mm, after lentil 12 mm."
      },
      {
       "id": "wheat",
       "numbers": [
        46
       ],
-      "tr": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %46 kadarını alıyor.",
-      "en": "The next wheat reaches about 46 % of its water-unlimited yield (median)."
+      "tr": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %46 kadarını alır.",
+      "en": "The wheat that follows gets about 46 % of the crop it would give with enough water (median)."
      },
      {
       "id": "soil",
@@ -894,8 +1100,8 @@
        85,
        460
       ],
-      "tr": "İki yılda tarla ortanca 460 gün çıplak kalıyor, bunun 85 günü rüzgârlı ve kuru.",
-      "en": "Over two years the field is bare about 460 days, 85 of them windy and dry."
+      "tr": "İki yıl içinde tarla ortanca 460 gün boş ve çıplak kalır, bunun 85 günü rüzgârlı ve kurudur.",
+      "en": "Over two years the field lies bare about 460 days, 85 of them windy and dry."
      },
      {
       "id": "dry",
@@ -903,71 +1109,102 @@
        20,
        36
       ],
-      "tr": "Yağış %20 azalırsa sonraki buğdayın oranı %36 düzeyine iner.",
-      "en": "If rain were 20 % lower, the next wheat would reach about 36 %."
+      "tr": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %36 düzeyine iner.",
+      "en": "If rain were 20 % lower, the following wheat would get about 36 %."
+     }
+    ],
+    "points": [
+     {
+      "id": "most_water",
+      "tr": "buğday ekimine en çok suyu bırakır",
+      "en": "leaves the most water for wheat sowing"
+     },
+     {
+      "id": "best_wheat",
+      "tr": "ardından gelen buğday en yüksek oranı alır",
+      "en": "the following wheat gets the highest share"
+     },
+     {
+      "id": "bare_long",
+      "tr": "tarla uzun süre boş ve çıplak kalır",
+      "en": "the field lies bare for a long time"
      }
     ],
     "tr": {
-     "text": "Nadas yılı yağışı toprakta biriktirir: buğday ekiminde ortanca 32 mm su kalıyor; nohut sonrasında 6 mm, mercimek sonrasında 12 mm. Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %46 kadarını alıyor. İki yılda tarla ortanca 460 gün çıplak kalıyor, bunun 85 günü rüzgârlı ve kuru. Yağış %20 azalırsa sonraki buğdayın oranı %36 düzeyine iner.",
+     "text": "Bu tarlada nadas öne çıkıyor: buğday ekimine en çok suyu bırakır ve ardından gelen buğday en yüksek oranı alır. Nadas yılında tarla boş bırakılır ve yağmur suyu toprakta birikir: buğday ekimine ortanca 32 mm su kalır; nohut sonrasında 6 mm, mercimek sonrasında 12 mm. Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %46 kadarını alır. İki yıl içinde tarla ortanca 460 gün boş ve çıplak kalır, bunun 85 günü rüzgârlı ve kurudur. Yağmur %20 az yağsa, ardından gelen buğdayın oranı %36 düzeyine iner.",
      "sentences": [
       {
-       "text": "Nadas yılı yağışı toprakta biriktirir: buğday ekiminde ortanca 32 mm su kalıyor; nohut sonrasında 6 mm, mercimek sonrasında 12 mm.",
+       "text": "Bu tarlada nadas öne çıkıyor: buğday ekimine en çok suyu bırakır ve ardından gelen buğday en yüksek oranı alır.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Nadas yılında tarla boş bırakılır ve yağmur suyu toprakta birikir: buğday ekimine ortanca 32 mm su kalır; nohut sonrasında 6 mm, mercimek sonrasında 12 mm.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %46 kadarını alıyor.",
+       "text": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %46 kadarını alır.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "İki yılda tarla ortanca 460 gün çıplak kalıyor, bunun 85 günü rüzgârlı ve kuru.",
+       "text": "İki yıl içinde tarla ortanca 460 gün boş ve çıplak kalır, bunun 85 günü rüzgârlı ve kurudur.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Yağış %20 azalırsa sonraki buğdayın oranı %36 düzeyine iner.",
+       "text": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %36 düzeyine iner.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/deep/fallow_wheat.tr.mp3"
     },
     "en": {
-     "text": "The fallow year stores rain in the soil: about 32 mm is left at wheat sowing (median); after chickpea 6 mm, after lentil 12 mm. The next wheat reaches about 46 % of its water-unlimited yield (median). Over two years the field is bare about 460 days, 85 of them windy and dry. If rain were 20 % lower, the next wheat would reach about 36 %.",
+     "text": "Fallow comes out on top for this field: leaves the most water for wheat sowing and the following wheat gets the highest share. In the fallow year the field rests and rain is stored in the soil: about 32 mm is left when wheat is sown (median); after chickpea 6 mm, after lentil 12 mm. The wheat that follows gets about 46 % of the crop it would give with enough water (median). Over two years the field lies bare about 460 days, 85 of them windy and dry. If rain were 20 % lower, the following wheat would get about 36 %.",
      "sentences": [
       {
-       "text": "The fallow year stores rain in the soil: about 32 mm is left at wheat sowing (median); after chickpea 6 mm, after lentil 12 mm.",
+       "text": "Fallow comes out on top for this field: leaves the most water for wheat sowing and the following wheat gets the highest share.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "In the fallow year the field rests and rain is stored in the soil: about 32 mm is left when wheat is sown (median); after chickpea 6 mm, after lentil 12 mm.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "The next wheat reaches about 46 % of its water-unlimited yield (median).",
+       "text": "The wheat that follows gets about 46 % of the crop it would give with enough water (median).",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "Over two years the field is bare about 460 days, 85 of them windy and dry.",
+       "text": "Over two years the field lies bare about 460 days, 85 of them windy and dry.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "If rain were 20 % lower, the next wheat would reach about 36 %.",
+       "text": "If rain were 20 % lower, the following wheat would get about 36 %.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/deep/fallow_wheat.en.mp3"
     }
    },
    "chickpea_wheat": {
@@ -978,8 +1215,8 @@
        6,
        32
       ],
-      "tr": "Nohut toprağın suyunu kullanır: buğday ekiminde ortanca 6 mm su kalıyor, nadastan sonra 32 mm.",
-      "en": "Chickpea uses the soil's water: about 6 mm is left at wheat sowing (median), 32 mm after fallow."
+      "tr": "Nohut toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 6 mm su kalır, nadastan sonra ise 32 mm.",
+      "en": "Chickpea uses part of the soil's water itself, so about 6 mm is left when wheat is sown (median), against 32 mm after fallow."
      },
      {
       "id": "wheat",
@@ -987,8 +1224,8 @@
        41,
        46
       ],
-      "tr": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde.",
-      "en": "The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %."
+      "tr": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46.",
+      "en": "The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %."
      },
      {
       "id": "soil",
@@ -998,8 +1235,8 @@
        332,
        460
       ],
-      "tr": "İki yılda tarla ortanca 332 gün çıplak kalıyor, bunun 60 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün.",
-      "en": "Over two years the field is bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days."
+      "tr": "İki yıl içinde tarla ortanca 332 gün boş ve çıplak kalır, bunun 60 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün.",
+      "en": "Over two years the field lies bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days."
      },
      {
       "id": "legume",
@@ -1007,22 +1244,22 @@
        19,
        27
       ],
-      "tr": "Nohut ortanca yılda suyun izin verdiği verimin %27 kadarını alıyor; kötü yıllarda (10 yılda 1) %19 düzeyine düşüyor.",
-      "en": "Chickpea reaches about 27 % of its water-limited potential in a median year and 19 % in a bad year (1 in 10)."
+      "tr": "Nohut normal bir yılda suyun izin verdiği ürünün %27 kadarını verir; on yılda bir gelen kötü yıllarda %19 düzeyine iner.",
+      "en": "In a normal year chickpea gives about 27 % of what the water allows; in the bad year that comes once in ten, about 19 %."
      },
      {
       "id": "nitrogen",
       "numbers": [],
-      "tr": "Nohut havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
-      "en": "Chickpea fixes nitrogen from the air; a soil test shows how much."
+      "tr": "Nohut kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
+      "en": "Chickpea fixes nitrogen from the air with its roots; a soil test shows how much."
      },
      {
       "id": "tillage",
       "numbers": [
        3
       ],
-      "tr": "Yılda yaklaşık 3 kez toprak işleniyor; nadasta 3 kez.",
-      "en": "The soil is tilled about 3 times a year; 3 times with fallow."
+      "tr": "Toprak yılda yaklaşık 3 kez işlenir; nadasta 3 kez.",
+      "en": "The soil is worked about 3 times a year; 3 times with fallow."
      },
      {
       "id": "dry",
@@ -1030,107 +1267,143 @@
        20,
        33
       ],
-      "tr": "Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
-      "en": "If rain were 20 % lower, the next wheat would reach about 33 %."
+      "tr": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
+      "en": "If rain were 20 % lower, the following wheat would get about 33 %."
+     }
+    ],
+    "points": [
+     {
+      "id": "harvest",
+      "tr": "boş kalacak yılda tarladan bir ürün alınır",
+      "en": "the field gives a crop in the year it would otherwise rest"
+     },
+     {
+      "id": "nitrogen",
+      "tr": "havadaki azotu toprağa bağlar",
+      "en": "fixes nitrogen from the air"
+     },
+     {
+      "id": "less_bare",
+      "tr": "tarla nadasa göre daha az gün çıplak kalır",
+      "en": "the field lies bare fewer days than with fallow"
+     },
+     {
+      "id": "less_water",
+      "tr": "buğday ekimine nadasa göre daha az su kalır",
+      "en": "less water is left for wheat than after fallow"
      }
     ],
     "tr": {
-     "text": "Nohut toprağın suyunu kullanır: buğday ekiminde ortanca 6 mm su kalıyor, nadastan sonra 32 mm. Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde. İki yılda tarla ortanca 332 gün çıplak kalıyor, bunun 60 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün. Nohut ortanca yılda suyun izin verdiği verimin %27 kadarını alıyor; kötü yıllarda (10 yılda 1) %19 düzeyine düşüyor. Nohut havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir. Yılda yaklaşık 3 kez toprak işleniyor; nadasta 3 kez. Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
+     "text": "Bu tarlada nohut öne çıkıyor: boş kalacak yılda tarladan bir ürün alınır ve havadaki azotu toprağa bağlar. Nohut toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 6 mm su kalır, nadastan sonra ise 32 mm. Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46. İki yıl içinde tarla ortanca 332 gün boş ve çıplak kalır, bunun 60 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün. Nohut normal bir yılda suyun izin verdiği ürünün %27 kadarını verir; on yılda bir gelen kötü yıllarda %19 düzeyine iner. Nohut kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir. Toprak yılda yaklaşık 3 kez işlenir; nadasta 3 kez. Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
      "sentences": [
       {
-       "text": "Nohut toprağın suyunu kullanır: buğday ekiminde ortanca 6 mm su kalıyor, nadastan sonra 32 mm.",
+       "text": "Bu tarlada nohut öne çıkıyor: boş kalacak yılda tarladan bir ürün alınır ve havadaki azotu toprağa bağlar.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Nohut toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 6 mm su kalır, nadastan sonra ise 32 mm.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %41 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde.",
+       "text": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %41 kadarını alır; nadastan sonra bu oran %46.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "İki yılda tarla ortanca 332 gün çıplak kalıyor, bunun 60 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün.",
+       "text": "İki yıl içinde tarla ortanca 332 gün boş ve çıplak kalır, bunun 60 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Nohut ortanca yılda suyun izin verdiği verimin %27 kadarını alıyor; kötü yıllarda (10 yılda 1) %19 düzeyine düşüyor.",
+       "text": "Nohut normal bir yılda suyun izin verdiği ürünün %27 kadarını verir; on yılda bir gelen kötü yıllarda %19 düzeyine iner.",
        "fact_ids": [
         "legume"
        ]
       },
       {
-       "text": "Nohut havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
+       "text": "Nohut kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
        "fact_ids": [
         "nitrogen"
        ]
       },
       {
-       "text": "Yılda yaklaşık 3 kez toprak işleniyor; nadasta 3 kez.",
+       "text": "Toprak yılda yaklaşık 3 kez işlenir; nadasta 3 kez.",
        "fact_ids": [
         "tillage"
        ]
       },
       {
-       "text": "Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
+       "text": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/deep/chickpea_wheat.tr.mp3"
     },
     "en": {
-     "text": "Chickpea uses the soil's water: about 6 mm is left at wheat sowing (median), 32 mm after fallow. The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %. Over two years the field is bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days. Chickpea reaches about 27 % of its water-limited potential in a median year and 19 % in a bad year (1 in 10). Chickpea fixes nitrogen from the air; a soil test shows how much. The soil is tilled about 3 times a year; 3 times with fallow. If rain were 20 % lower, the next wheat would reach about 33 %.",
+     "text": "Chickpea comes out on top for this field: the field gives a crop in the year it would otherwise rest and fixes nitrogen from the air. Chickpea uses part of the soil's water itself, so about 6 mm is left when wheat is sown (median), against 32 mm after fallow. The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %. Over two years the field lies bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days. In a normal year chickpea gives about 27 % of what the water allows; in the bad year that comes once in ten, about 19 %. Chickpea fixes nitrogen from the air with its roots; a soil test shows how much. The soil is worked about 3 times a year; 3 times with fallow. If rain were 20 % lower, the following wheat would get about 33 %.",
      "sentences": [
       {
-       "text": "Chickpea uses the soil's water: about 6 mm is left at wheat sowing (median), 32 mm after fallow.",
+       "text": "Chickpea comes out on top for this field: the field gives a crop in the year it would otherwise rest and fixes nitrogen from the air.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Chickpea uses part of the soil's water itself, so about 6 mm is left when wheat is sown (median), against 32 mm after fallow.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "The next wheat reaches about 41 % of its water-unlimited yield (median); after fallow 46 %.",
+       "text": "The wheat that follows gets about 41 % of the crop it would give with enough water (median); after fallow 46 %.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "Over two years the field is bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days.",
+       "text": "Over two years the field lies bare about 332 days, 60 of them windy and dry; with fallow 460 and 85 days.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Chickpea reaches about 27 % of its water-limited potential in a median year and 19 % in a bad year (1 in 10).",
+       "text": "In a normal year chickpea gives about 27 % of what the water allows; in the bad year that comes once in ten, about 19 %.",
        "fact_ids": [
         "legume"
        ]
       },
       {
-       "text": "Chickpea fixes nitrogen from the air; a soil test shows how much.",
+       "text": "Chickpea fixes nitrogen from the air with its roots; a soil test shows how much.",
        "fact_ids": [
         "nitrogen"
        ]
       },
       {
-       "text": "The soil is tilled about 3 times a year; 3 times with fallow.",
+       "text": "The soil is worked about 3 times a year; 3 times with fallow.",
        "fact_ids": [
         "tillage"
        ]
       },
       {
-       "text": "If rain were 20 % lower, the next wheat would reach about 33 %.",
+       "text": "If rain were 20 % lower, the following wheat would get about 33 %.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/deep/chickpea_wheat.en.mp3"
     }
    },
    "lentil_wheat": {
@@ -1141,8 +1414,8 @@
        12,
        32
       ],
-      "tr": "Mercimek toprağın suyunu kullanır: buğday ekiminde ortanca 12 mm su kalıyor, nadastan sonra 32 mm.",
-      "en": "Lentil uses the soil's water: about 12 mm is left at wheat sowing (median), 32 mm after fallow."
+      "tr": "Mercimek toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 12 mm su kalır, nadastan sonra ise 32 mm.",
+      "en": "Lentil uses part of the soil's water itself, so about 12 mm is left when wheat is sown (median), against 32 mm after fallow."
      },
      {
       "id": "wheat",
@@ -1150,8 +1423,8 @@
        42,
        46
       ],
-      "tr": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %42 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde.",
-      "en": "The next wheat reaches about 42 % of its water-unlimited yield (median); after fallow 46 %."
+      "tr": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %42 kadarını alır; nadastan sonra bu oran %46.",
+      "en": "The wheat that follows gets about 42 % of the crop it would give with enough water (median); after fallow 46 %."
      },
      {
       "id": "soil",
@@ -1161,8 +1434,8 @@
        310,
        460
       ],
-      "tr": "İki yılda tarla ortanca 310 gün çıplak kalıyor, bunun 54 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün.",
-      "en": "Over two years the field is bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days."
+      "tr": "İki yıl içinde tarla ortanca 310 gün boş ve çıplak kalır, bunun 54 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün.",
+      "en": "Over two years the field lies bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days."
      },
      {
       "id": "legume",
@@ -1170,14 +1443,14 @@
        22,
        29
       ],
-      "tr": "Mercimek ortanca yılda suyun izin verdiği verimin %29 kadarını alıyor; kötü yıllarda (10 yılda 1) %22 düzeyine düşüyor.",
-      "en": "Lentil reaches about 29 % of its water-limited potential in a median year and 22 % in a bad year (1 in 10)."
+      "tr": "Mercimek normal bir yılda suyun izin verdiği ürünün %29 kadarını verir; on yılda bir gelen kötü yıllarda %22 düzeyine iner.",
+      "en": "In a normal year lentil gives about 29 % of what the water allows; in the bad year that comes once in ten, about 22 %."
      },
      {
       "id": "nitrogen",
       "numbers": [],
-      "tr": "Mercimek havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
-      "en": "Lentil fixes nitrogen from the air; a soil test shows how much."
+      "tr": "Mercimek kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
+      "en": "Lentil fixes nitrogen from the air with its roots; a soil test shows how much."
      },
      {
       "id": "tillage",
@@ -1185,8 +1458,8 @@
        2,
        3
       ],
-      "tr": "Yılda yaklaşık 2 kez toprak işleniyor; nadasta 3 kez.",
-      "en": "The soil is tilled about 2 times a year; 3 times with fallow."
+      "tr": "Toprak yılda yaklaşık 2 kez işlenir; nadasta 3 kez.",
+      "en": "The soil is worked about 2 times a year; 3 times with fallow."
      },
      {
       "id": "dry",
@@ -1194,107 +1467,143 @@
        20,
        33
       ],
-      "tr": "Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
-      "en": "If rain were 20 % lower, the next wheat would reach about 33 %."
+      "tr": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
+      "en": "If rain were 20 % lower, the following wheat would get about 33 %."
+     }
+    ],
+    "points": [
+     {
+      "id": "harvest",
+      "tr": "boş kalacak yılda tarladan bir ürün alınır",
+      "en": "the field gives a crop in the year it would otherwise rest"
+     },
+     {
+      "id": "nitrogen",
+      "tr": "havadaki azotu toprağa bağlar",
+      "en": "fixes nitrogen from the air"
+     },
+     {
+      "id": "less_bare",
+      "tr": "tarla nadasa göre daha az gün çıplak kalır",
+      "en": "the field lies bare fewer days than with fallow"
+     },
+     {
+      "id": "less_water",
+      "tr": "buğday ekimine nadasa göre daha az su kalır",
+      "en": "less water is left for wheat than after fallow"
      }
     ],
     "tr": {
-     "text": "Mercimek toprağın suyunu kullanır: buğday ekiminde ortanca 12 mm su kalıyor, nadastan sonra 32 mm. Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %42 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde. İki yılda tarla ortanca 310 gün çıplak kalıyor, bunun 54 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün. Mercimek ortanca yılda suyun izin verdiği verimin %29 kadarını alıyor; kötü yıllarda (10 yılda 1) %22 düzeyine düşüyor. Mercimek havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir. Yılda yaklaşık 2 kez toprak işleniyor; nadasta 3 kez. Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
+     "text": "Bu tarlada mercimek öne çıkıyor: boş kalacak yılda tarladan bir ürün alınır ve havadaki azotu toprağa bağlar. Mercimek toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 12 mm su kalır, nadastan sonra ise 32 mm. Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %42 kadarını alır; nadastan sonra bu oran %46. İki yıl içinde tarla ortanca 310 gün boş ve çıplak kalır, bunun 54 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün. Mercimek normal bir yılda suyun izin verdiği ürünün %29 kadarını verir; on yılda bir gelen kötü yıllarda %22 düzeyine iner. Mercimek kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir. Toprak yılda yaklaşık 2 kez işlenir; nadasta 3 kez. Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
      "sentences": [
       {
-       "text": "Mercimek toprağın suyunu kullanır: buğday ekiminde ortanca 12 mm su kalıyor, nadastan sonra 32 mm.",
+       "text": "Bu tarlada mercimek öne çıkıyor: boş kalacak yılda tarladan bir ürün alınır ve havadaki azotu toprağa bağlar.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Mercimek toprağın suyunun bir kısmını kendisi kullanır; bu yüzden buğday ekimine ortanca 12 mm su kalır, nadastan sonra ise 32 mm.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "Sonraki buğday, su kısıtı olmasaydı alacağı verimin ortanca %42 kadarını alıyor; nadastan sonra bu oran %46 düzeyinde.",
+       "text": "Ardından ekilen buğday, suyu yetseydi alacağı ürünün ortanca %42 kadarını alır; nadastan sonra bu oran %46.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "İki yılda tarla ortanca 310 gün çıplak kalıyor, bunun 54 günü rüzgârlı ve kuru; nadasta 460 gün ve 85 gün.",
+       "text": "İki yıl içinde tarla ortanca 310 gün boş ve çıplak kalır, bunun 54 günü rüzgârlı ve kurudur; nadasta bu sayılar 460 ve 85 gün.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Mercimek ortanca yılda suyun izin verdiği verimin %29 kadarını alıyor; kötü yıllarda (10 yılda 1) %22 düzeyine düşüyor.",
+       "text": "Mercimek normal bir yılda suyun izin verdiği ürünün %29 kadarını verir; on yılda bir gelen kötü yıllarda %22 düzeyine iner.",
        "fact_ids": [
         "legume"
        ]
       },
       {
-       "text": "Mercimek havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
+       "text": "Mercimek kökleriyle havadaki azotu toprağa bağlar; ne kadar bağladığını toprak tahlili gösterir.",
        "fact_ids": [
         "nitrogen"
        ]
       },
       {
-       "text": "Yılda yaklaşık 2 kez toprak işleniyor; nadasta 3 kez.",
+       "text": "Toprak yılda yaklaşık 2 kez işlenir; nadasta 3 kez.",
        "fact_ids": [
         "tillage"
        ]
       },
       {
-       "text": "Yağış %20 azalırsa sonraki buğdayın oranı %33 düzeyine iner.",
+       "text": "Yağmur %20 az yağsa, ardından gelen buğdayın oranı %33 düzeyine iner.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/deep/lentil_wheat.tr.mp3"
     },
     "en": {
-     "text": "Lentil uses the soil's water: about 12 mm is left at wheat sowing (median), 32 mm after fallow. The next wheat reaches about 42 % of its water-unlimited yield (median); after fallow 46 %. Over two years the field is bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days. Lentil reaches about 29 % of its water-limited potential in a median year and 22 % in a bad year (1 in 10). Lentil fixes nitrogen from the air; a soil test shows how much. The soil is tilled about 2 times a year; 3 times with fallow. If rain were 20 % lower, the next wheat would reach about 33 %.",
+     "text": "Lentil comes out on top for this field: the field gives a crop in the year it would otherwise rest and fixes nitrogen from the air. Lentil uses part of the soil's water itself, so about 12 mm is left when wheat is sown (median), against 32 mm after fallow. The wheat that follows gets about 42 % of the crop it would give with enough water (median); after fallow 46 %. Over two years the field lies bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days. In a normal year lentil gives about 29 % of what the water allows; in the bad year that comes once in ten, about 22 %. Lentil fixes nitrogen from the air with its roots; a soil test shows how much. The soil is worked about 2 times a year; 3 times with fallow. If rain were 20 % lower, the following wheat would get about 33 %.",
      "sentences": [
       {
-       "text": "Lentil uses the soil's water: about 12 mm is left at wheat sowing (median), 32 mm after fallow.",
+       "text": "Lentil comes out on top for this field: the field gives a crop in the year it would otherwise rest and fixes nitrogen from the air.",
+       "fact_ids": [
+        "intro"
+       ]
+      },
+      {
+       "text": "Lentil uses part of the soil's water itself, so about 12 mm is left when wheat is sown (median), against 32 mm after fallow.",
        "fact_ids": [
         "water"
        ]
       },
       {
-       "text": "The next wheat reaches about 42 % of its water-unlimited yield (median); after fallow 46 %.",
+       "text": "The wheat that follows gets about 42 % of the crop it would give with enough water (median); after fallow 46 %.",
        "fact_ids": [
         "wheat"
        ]
       },
       {
-       "text": "Over two years the field is bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days.",
+       "text": "Over two years the field lies bare about 310 days, 54 of them windy and dry; with fallow 460 and 85 days.",
        "fact_ids": [
         "soil"
        ]
       },
       {
-       "text": "Lentil reaches about 29 % of its water-limited potential in a median year and 22 % in a bad year (1 in 10).",
+       "text": "In a normal year lentil gives about 29 % of what the water allows; in the bad year that comes once in ten, about 22 %.",
        "fact_ids": [
         "legume"
        ]
       },
       {
-       "text": "Lentil fixes nitrogen from the air; a soil test shows how much.",
+       "text": "Lentil fixes nitrogen from the air with its roots; a soil test shows how much.",
        "fact_ids": [
         "nitrogen"
        ]
       },
       {
-       "text": "The soil is tilled about 2 times a year; 3 times with fallow.",
+       "text": "The soil is worked about 2 times a year; 3 times with fallow.",
        "fact_ids": [
         "tillage"
        ]
       },
       {
-       "text": "If rain were 20 % lower, the next wheat would reach about 33 %.",
+       "text": "If rain were 20 % lower, the following wheat would get about 33 %.",
        "fact_ids": [
         "dry"
        ]
       }
      ],
      "source": "template",
-     "tries": 0
+     "tries": 0,
+     "audio": "audio/bogazliyan/deep/lentil_wheat.en.mp3"
     }
    }
   }
