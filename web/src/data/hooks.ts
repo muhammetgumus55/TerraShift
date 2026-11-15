@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import type { AgentFile, FertilizerFile, LedgerFile, ResultsFile, SmapFile, SoilHealthFile, SowingFile } from '@/lib/types';
-import { loadAgent, loadFertilizer, loadLedger, loadResults, loadSmap, loadSoilHealth, loadSowing } from './api';
+import type { AgentFile, ExplainFile, FertilizerFile, LedgerFile, ResultsFile, SmapFile, SoilHealthFile, SowingFile } from '@/lib/types';
+import { loadAgent, loadExplain, loadFertilizer, loadLedger, loadResults, loadSmap, loadSoilHealth, loadSowing } from './api';
 
 export type Async<T> = { status: 'loading' } | { status: 'error' } | { status: 'ready'; data: T };
 
@@ -30,6 +30,9 @@ export function useDistrict(locationId: string | null, scenarioId = 'baseline'):
     return { results, baseline, smap, agent };
   });
 }
+
+export const useExplain = (locationId: string | null): Async<ExplainFile | null> =>
+  useAsync(locationId ? `explain|${locationId}` : null, () => loadExplain(locationId!));
 
 export const useLedger = (locationId: string | null, wanted: boolean): Async<LedgerFile> =>
   useAsync(locationId && wanted ? `ledger|${locationId}` : null, () => loadLedger(locationId!));

@@ -138,6 +138,18 @@ export interface AgentReport {
   uncertainties: Text[];
   ask_local_expert: Text[];
 }
+// explain/{location_id}.json — why this rotation (15 Nov): facts computed by the engine, worded by a local
+// model and checked per cited fact; `source: template` = the fact sentences themselves. Audio is optional.
+export interface ExplainFact { id: string; numbers: number[]; tr: string; en: string }
+export interface ExplainText { text: string; sentences: { text: string; fact_ids: string[] }[]; source: 'model' | 'template'; tries: number; audio?: string }
+export interface ExplainEntry { facts: ExplainFact[]; tr: ExplainText; en: ExplainText }
+export interface ExplainFile extends FileHeader {
+  location_id: LocationId;
+  model: string | null;
+  type: 'model';
+  explanations: Record<DepthId, Record<RotationId, ExplainEntry>>;
+}
+
 export interface AgentFile extends FileHeader {
   location_id: LocationId;
   depth_id: DepthId;
