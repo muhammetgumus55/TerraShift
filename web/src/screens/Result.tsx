@@ -10,7 +10,7 @@ import { harvestYears, practiceOf, stageOf } from '@/domain/history';
 import { nextSeason, type NextSeason } from '@/domain/nextSeason';
 import { weightsFor } from '@/domain/priorities';
 import { ROTATION_COLOR_ON_MAP } from '@/domain/sim';
-import { buildVerdict, type Verdict } from '@/domain/verdict';
+import { buildVerdict, whyKey, type Verdict } from '@/domain/verdict';
 import { inputsFromDefaults } from '@/lib/economics';
 import type { CropId, DepthId, RotationId } from '@/lib/types';
 import { Button, Card, DataBadge, Note, cn } from '@/ui/kit';
@@ -223,9 +223,10 @@ function ModeSwitch() {
   );
 }
 
+/** How far ahead the suggestion is. Empty when it is the only option left: the reason line already says so. */
 function closeText(v: Verdict, t: ReturnType<typeof useT>['t'], tx: ReturnType<typeof useT>['tx']): string {
   if (v.closeCall && v.runnerUp) return t('recClose', { r: tx(v.runnerUp.rotation.label) });
-  return v.runnerUp ? t('recNotClose') : t('recOnly');
+  return v.runnerUp ? t('recNotClose') : '';
 }
 
 function Hero({ verdict, locationId, depth }: { verdict: Verdict; locationId: string | null; depth: DepthId }) {
@@ -243,7 +244,9 @@ function Hero({ verdict, locationId, depth }: { verdict: Verdict; locationId: st
   if (!rec || !next) return <Note tone="bad" icon={<Ban size={20} />}>{t('recNone')}</Note>;
   const crop = t(`crop_${next.crop}` as Key);
   const thenLine = next.wheatNow ? t('heroThenChoice', { crop: t(`crop_${next.then}` as Key).toLocaleLowerCase(lang) }) : t('heroThenWheat');
-  const why = t(`why_${rec.ranked.driver}` as Key);
+  // A "most / least" sentence only when it is true of this option; see domain/verdict.ts reasonFor.
+  const reason = whyKey(verdict) ?? 'why_overall';
+  const why = reason === 'why_only' ? `${t('why_only')} ${t('why_only_more')}` : t(reason);
   // Why this crop, in plain words: facts from the engine, worded by the local model (or the fact sentences).
   const explain = explainFile.status === 'ready' && explainFile.data
     ? explainFile.data.explanations[depth]?.[rec.rotation.id as RotationId]?.[lang] ?? null : null;
@@ -254,7 +257,7 @@ function Hero({ verdict, locationId, depth }: { verdict: Verdict; locationId: st
     why, explain?.text ?? '', close,
     blocked.length ? `${t('recBlocked')}: ${blocked.join(' ')}` : t('noBlocked'),
     translate(lang, 'supports'),
-  ].join(' ');
+  ].filter(Boolean).join(' ');
 
   const speak = () => {
     // The guide's recorded voice (ElevenLabs, made at build time) when there is a clip; the browser voice otherwise.
@@ -317,7 +320,7 @@ function Hero({ verdict, locationId, depth }: { verdict: Verdict; locationId: st
           ? <>{t('yourPriority', { p: t(`prio_${priority}` as Key) })} <DataBadge type="user" /></>
           : <>{t('teamPriority')} <DataBadge type="assumption" /></>}
       </p>
-      <p className={cn('mt-3 rounded-2xl px-3.5 py-2.5 text-base font-semibold leading-snug', verdict.closeCall ? 'bg-gold text-primary-strong' : 'bg-white/14')}>{close}</p>
+      {close && <p className={cn('mt-3 rounded-2xl px-3.5 py-2.5 text-base font-semibold leading-snug', verdict.closeCall ? 'bg-gold text-primary-strong' : 'bg-white/14')}>{close}</p>}
       <div className="mt-4 flex flex-wrap gap-2">
         {(explain?.audio || 'speechSynthesis' in window) && (
           <button type="button" onClick={speak} aria-pressed={speaking} className="inline-flex min-h-12 items-center gap-2 rounded-2xl bg-white px-4 text-base font-bold text-primary-strong active:scale-[0.98]">

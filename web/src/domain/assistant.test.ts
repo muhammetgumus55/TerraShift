@@ -4,7 +4,7 @@ import { answer, normalize, type FieldContext } from './assistant';
 
 const t = (k: Parameters<typeof translate>[1], v?: Record<string, string | number>) => translate('tr', k, v);
 const ctx: FieldContext = {
-  location: 'Develi, Kayseri', harvestYear: 2027, crop: 'chickpea', then: 'wheat', wheatNow: false, driver: 'value',
+  location: 'Develi, Kayseri', harvestYear: 2027, crop: 'chickpea', then: 'wheat', wheatNow: false, driver: 'value', why: 'why_value',
   alternatives: [{ crop: 'lentil', close: false }, { crop: 'fallow', close: false }], blocked: [], irrigated: false,
 };
 
@@ -25,6 +25,15 @@ describe('ask the farmer', () => {
     expect(answer('başka ne ekebilirim', ctx, t).text).toContain('Mercimek');
     expect(answer('mercimek ekebilir miyim', ctx, t).text).toContain('daha az uygun');
     expect(answer('Neden nohut?', ctx, t).text).toContain('kazanç');
+  });
+  it('gives the reason the page gives, not a sentence built from the driver', () => {
+    // Fallow left as the only option under "protect my soil": soil drives the score, but fallow is the barest option.
+    const onlyFallow: FieldContext = { ...ctx, crop: 'fallow', driver: 'soil', why: 'why_only', alternatives: [] };
+    for (const q of ['neden bu öneri', 'ne ekmeliyim', 'Neden nadas?']) {
+      const text = answer(q, onlyFallow, t).text;
+      expect(text).toContain(t('why_only'));
+      expect(text).not.toContain(t('why_soil'));
+    }
   });
   it('defines glossary terms, also in English', () => {
     expect(answer('P10 ne demek?', ctx, t).text).toMatch(/^P10/);

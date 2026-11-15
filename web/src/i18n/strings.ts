@@ -23,6 +23,9 @@ export const S = {
   showTable: { tr: 'Tablo olarak göster', en: 'Show as a table' },
   month: { tr: 'Ay', en: 'Month' },
   mapFailed: { tr: 'Bu tarayıcı üç boyutlu haritayı açamıyor (WebGL kapalı). Sorular ve sonuçlar yine çalışır.', en: 'This browser cannot open the 3D map (WebGL is off). The questions and results still work.' },
+  // ui/ErrorBoundary: one broken part must not blank the page.
+  mapLoadFailed: { tr: 'Harita yüklenemedi. Sorular ve sonuçlar yine çalışır.', en: 'The map could not be loaded. The questions and results still work.' },
+  renderFailed: { tr: 'Bir şeyler ters gitti. Tekrar deneyebilir ya da başka bir tarla seçebilirsin.', en: 'Something went wrong. You can try again or pick another field.' },
   donum: { tr: 'dönüm', en: 'dönüm' },
   days: { tr: 'gün', en: 'days' },
   pending: { tr: 'bekleniyor', en: 'pending' },
@@ -52,7 +55,7 @@ export const S = {
   stepShort2: { tr: 'Sorular', en: 'Questions' },
   stepShort3: { tr: 'Sonuç', en: 'Result' },
   heroScope: { tr: 'Şimdilik İç Anadolu’da 13 kuru tarım ilçesinde çalışır.', en: 'For now it works in 13 rainfed districts of Central Anatolia.' },
-  heroPrivacy: { tr: 'Hesap gerekmez. Yazdıkların yalnızca bu cihazda kalır.', en: 'No account needed. What you enter stays on this device.' },
+  heroPrivacy: { tr: 'Hesap açman gerekmez. Cevapların bu cihazda saklanır. Tarlanın konumu harita, tapu ve hava verisi servislerine sorgu için gönderilir.', en: 'No account needed. Your answers are kept on this device. Your field’s location is sent to map, land-registry and weather-data services to run the queries.' },
 
   // Find the field
   findTitle: { tr: 'Tarlan nerede?', en: 'Where is your field?' },
@@ -75,9 +78,10 @@ export const S = {
   queryingParcel: { tr: 'Parsel sorgulanıyor…', en: 'Looking up the parcel…' },
   noParcelHere: { tr: 'Bu noktada kayıtlı parsel yok (yol, dere ya da kadastro dışı alan olabilir).', en: 'No registered parcel here (it may be a road, a stream or land outside the cadastre).' },
   tkgmFail: { tr: 'Parsel servisine ulaşılamadı. Biraz sonra tekrar dene ya da tarlanı elle çiz.', en: 'The parcel service could not be reached. Try again shortly or draw the field by hand.' },
-  tkgmLimit: { tr: 'TKGM’nin günlük parsel sorgu sınırı doldu. Tarlanı elle çizebilir ya da yarın tekrar deneyebilirsin.', en: 'TKGM’s daily parcel query limit has been reached. You can draw the field by hand or try again tomorrow.' },
-  tkgmBusyNote: { tr: 'Tapu servisi (TKGM) bugünkü sorgu sınırına ulaştı. Şimdilik en kolayı tarlanı haritada çizmek; tapudan seçim yarın yeniden çalışır.', en: 'The land registry service (TKGM) has reached today’s query limit. For now, drawing your field on the map is easiest; picking from the registry works again tomorrow.' },
-  tkgmBusySub: { tr: 'Tapu servisi bugün yoğun', en: 'Land registry service is busy today' },
+  // TKGM refuses queries from the live site on the first request (403), so no "works again tomorrow" promise.
+  tkgmLimit: { tr: 'Tapu servisi (TKGM) şu an bu siteden gelen sorguları kabul etmiyor. Tarlanı elle çizebilir ya da ilçeni listeden seçebilirsin.', en: 'The land registry service (TKGM) is not accepting queries from this site right now. You can draw the field by hand or pick your district from the list.' },
+  tkgmBusyNote: { tr: 'Tapu servisi (TKGM) şu an bu siteden gelen sorguları kabul etmiyor. İlçeni listeden seçebilir ya da tarlanı haritada çizebilirsin.', en: 'The land registry service (TKGM) is not accepting queries from this site right now. You can pick your district from the list or draw your field on the map.' },
+  tkgmBusySub: { tr: 'Tapu servisi şu an kullanılamıyor', en: 'Land registry service unavailable right now' },
   tkgmNote: {
     tr: 'Kaynak: TKGM Parsel Sorgu. Bilgi amaçlıdır, resmi belge yerine geçmez.',
     en: 'Source: TKGM Parcel Query. For information only, not an official document.',
@@ -211,7 +215,6 @@ export const S = {
   recDriver: { tr: 'En çok etki eden: {d}', en: 'Weighed most: {d}' },
   recClose: { tr: 'Sonuçlar yakın: {r} da neredeyse aynı derecede uygun. Yerel bilgiyle karar ver.', en: 'Results are close: {r} is almost as suitable. Decide with local knowledge.' },
   recNotClose: { tr: 'Sonuçlar yakın değil: ikinci seçenekle arada belirgin fark var.', en: 'Results are not close: there is a clear gap to the second option.' },
-  recOnly: { tr: 'Verimlilik eşiklerini geçen tek seçenek bu.', en: 'This is the only option that passes the productivity thresholds.' },
   recNone: { tr: 'Bu koşullarda hiçbir seçenek verimlilik eşiklerini geçmiyor.', en: 'Under these conditions no option passes the productivity thresholds.' },
   recBlocked: { tr: 'Ne kazandırırsa kazandırsın önerilmiyor', en: 'Not suggested, whatever it would earn' },
   noBlocked: { tr: 'Engellenen seçenek yok: üçü de verimlilik eşiklerini geçiyor.', en: 'No option is blocked: all three pass the productivity thresholds.' },
@@ -227,7 +230,12 @@ export const S = {
   crit_yield: { tr: 'buğday verimi', en: 'wheat yield' },
   crit_soil: { tr: 'toprak koruma', en: 'soil protection' },
   crit_water: { tr: 'toprakta su', en: 'water in the soil' },
-  why_value: { tr: 'İki yılın sonunda sana en çok kazandıran sıra bu.', en: 'Over the two years this sequence earns you the most.' },
+  // The reason under the suggestion (domain/verdict.ts whyKey). The four "most / best / least" sentences are
+  // shown only when the option really is first of all three on that criterion; otherwise why_only or why_overall.
+  why_value: { tr: 'Hesabımıza göre iki yılda en yüksek ürün değeri bu sırada çıkıyor; masraflar hesaba katılmadı.', en: 'By our estimate this sequence gives the highest crop value over the two years; expenses are not counted.' },
+  why_only: { tr: 'Diğer iki seçenek bu tarlada alt sınırları geçemedi; geriye bu sıra kaldı.', en: 'The other two options did not pass the lower limits on this field; this sequence is what remains.' },
+  why_only_more: { tr: 'Nedenleri aşağıda.', en: 'The reasons are below.' },
+  why_overall: { tr: 'Önerilebilen seçenekler içinde bu sıra, ölçütlerin toplamında öne çıkıyor.', en: 'Among the options that can be suggested, this sequence comes out ahead when all criteria are weighed together.' },
   why_yield: { tr: 'Buğday verimini en iyi bu sıra koruyor.', en: 'This sequence protects the wheat yield best.' },
   why_soil: { tr: 'Tarlan en az bu sırada çıplak ve rüzgâra açık kalıyor.', en: 'With this sequence the field lies bare and open to wind the least.' },
   why_water: { tr: 'Buğday ekilirken toprakta en çok suyu bu sıra bırakıyor.', en: 'This sequence leaves the most water in the soil when the wheat is sown.' },

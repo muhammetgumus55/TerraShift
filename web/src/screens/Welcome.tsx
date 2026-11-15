@@ -42,7 +42,8 @@ export function Welcome() {
             </button>
           )}
         </div>
-        <p className="mt-3 text-[13px] leading-snug text-white/75 sm:text-sm md:mt-5">{t('heroScope')} {t('heroPrivacy')}</p>
+        {/* On a phone the "ask the farmer" button sits in the bottom-right corner: keep these lines clear of it. */}
+        <p className="mt-3 pr-[4.75rem] text-[13px] leading-snug text-white/75 sm:text-sm md:mt-5 md:pr-0">{t('heroScope')} {t('heroPrivacy')}</p>
       </div>
     </div>
   );

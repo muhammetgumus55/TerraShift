@@ -18,6 +18,7 @@ import { Analyzing } from '@/screens/Analyzing';
 import { Result } from '@/screens/Result';
 import { SimHud } from '@/screens/result/SimHud';
 import { Button, Note } from '@/ui/kit';
+import { ErrorBoundary } from '@/ui/ErrorBoundary';
 
 // MapLibre is most of the download; loading it apart lets the first words appear at once.
 const MapCanvas = lazy(() => import('@/map/MapCanvas').then((m) => ({ default: m.MapCanvas })));
@@ -30,6 +31,7 @@ export default function App() {
   const sim = useStore((s) => s.sim);
   const hasField = useStore((s) => s.parcels.length > 0 && !!s.locationId);
   const go = useStore((s) => s.go);
+  const reset = useStore((s) => s.reset);
   const profileOpen = useStore((s) => s.profileOpen);
 
   useEffect(() => {
@@ -61,9 +63,29 @@ export default function App() {
 
   const mock = !!core && (core.site.mock || core.defaults.mock || core.validation.mock);
 
+  // What a broken screen shows instead of a blank page: try again, or leave the saved state behind.
+  const failCard = (retry: () => void) => (
+    <Note tone="bad">
+      {t('renderFailed')}
+      <div className="mt-2 flex flex-wrap gap-2">
+        <Button onClick={retry}>{t('retry')}</Button>
+        <Button onClick={() => { reset(); go('find'); retry(); }}>{t('newField')}</Button>
+      </div>
+    </Note>
+  );
+
   return (
+    // Last resort: whatever throws outside the boundaries below still leaves a card on the page.
+    <ErrorBoundary fallback={(retry) => (
+      <div className="grid h-dvh w-full place-items-center bg-[#0d1f17] p-6"><div className="w-full max-w-md">{failCard(retry)}</div></div>
+    )}>
     <div className="relative h-dvh w-full overflow-hidden bg-[#0d1f17]">
-      <Suspense fallback={null}><MapCanvas /></Suspense>
+      {/* If the map chunk cannot be loaded or the map throws, the questions and results still work. */}
+      <ErrorBoundary fallback={() => (
+        <div className="absolute inset-0 grid place-items-center bg-primary-strong p-8 text-center text-lg text-white">{t('mapLoadFailed')}</div>
+      )}>
+        <Suspense fallback={null}><MapCanvas /></Suspense>
+      </ErrorBoundary>
       {step === 'welcome' && <Welcome />}
       <TopBar />
       {mock && (
@@ -71,26 +93,30 @@ export default function App() {
       )}
       {step !== 'welcome' && (
         <Panel>
-          {coreError ? (
-            <Note tone="bad">{t('loadFailed')}<Button className="mt-2" onClick={() => location.reload()}>{t('retry')}</Button></Note>
-          ) : !core ? (
-            <p className="py-10 text-center text-lg text-muted" role="status">{t('loading')}</p>
-          ) : (
-            <>
-              {step === 'find' && <FindField />}
-              {step === 'questions' && hasField && <Questions />}
-              {step === 'analyzing' && hasField && <Analyzing />}
-              {step === 'result' && hasField && <Result />}
-            </>
-          )}
+          {/* A screen that throws shows a card with a way out instead of a blank page; a new step starts clean. */}
+          <ErrorBoundary resetKey={step} fallback={failCard}>
+            {coreError ? (
+              <Note tone="bad">{t('loadFailed')}<Button className="mt-2" onClick={() => location.reload()}>{t('retry')}</Button></Note>
+            ) : !core ? (
+              <p className="py-10 text-center text-lg text-muted" role="status">{t('loading')}</p>
+            ) : (
+              <>
+                {step === 'find' && <FindField />}
+                {step === 'questions' && hasField && <Questions />}
+                {step === 'analyzing' && hasField && <Analyzing />}
+                {step === 'result' && hasField && <Result />}
+              </>
+            )}
+          </ErrorBoundary>
         </Panel>
       )}
       {sim && core && step === 'result' && <SimHud />}
       <MapControls />
-      {/* The farmer stays in the corner on every screen. */}
-      <Ask />
+      {/* The farmer stays in the corner on every screen; if his answers cannot be worked out, he steps aside. */}
+      <ErrorBoundary resetKey={step} fallback={() => null}><Ask /></ErrorBoundary>
       {profileOpen && <Profile />}
       <ConsentDialog />
     </div>
+    </ErrorBoundary>
   );
 }

@@ -3,7 +3,7 @@ import { ArrowRight, Send, X } from 'lucide-react';
 import { useT, type Key } from '@/i18n';
 import { depthFor, useStore } from '@/state/store';
 import { useDistrict } from '@/data/hooks';
-import { buildVerdict } from '@/domain/verdict';
+import { buildVerdict, whyKey } from '@/domain/verdict';
 import { weightsFor } from '@/domain/priorities';
 import { inputsFromDefaults } from '@/lib/economics';
 import { stageOf, harvestYears } from '@/domain/history';
@@ -32,6 +32,7 @@ function useFieldContext(): FieldContext | null {
     return {
       location: `${loc.name}, ${loc.province}`, harvestYear: n.harvestYear, crop: n.crop, then: n.then, wheatNow: n.wheatNow,
       driver: v.recommended.ranked.driver as FieldContext['driver'],
+      why: whyKey(v) ?? 'why_overall',
       alternatives: n.alternatives.map((a) => ({ crop: a.crop, close: a.close })),
       blocked: v.blocked.map((b) => ({ crop: b.rotation.crops[0], reasons: b.ranked.blocked.map((r) => t(`block_${r}` as Key)) })),
       irrigated: answers.water === 'irrigated',

@@ -15,6 +15,8 @@ export interface FieldContext {
   then: CropId;
   wheatNow: boolean;
   driver: 'value' | 'yield' | 'soil' | 'water';
+  /** The reason sentence that is true for this suggestion (domain/verdict.ts whyKey), not always `why_<driver>`. */
+  why: Key;
   alternatives: { crop: CropId; close: boolean }[];
   blocked: { crop: CropId; reasons: string[] }[];
   irrigated: boolean;
@@ -107,7 +109,7 @@ export function answer(question: string, ctx: FieldContext | null, t: T): Reply 
     const firstChoice = ctx.wheatNow ? ctx.then : ctx.crop;
     // "Neden nohut?" about the suggested crop asks for the reason, not the name again.
     if (c === firstChoice && top === 'why') {
-      return { text: `${t('as_crop_rec', { crop: crop(c) })} ${t('as_why', { why: t(`why_${ctx.driver}` as Key), driver: t(`crit_${ctx.driver}` as Key) })}`, action: { kind: 'section', id: 'options' } };
+      return { text: `${t('as_crop_rec', { crop: crop(c) })} ${t('as_why', { why: t(ctx.why), driver: t(`crit_${ctx.driver}` as Key) })}`, action: { kind: 'section', id: 'options' } };
     }
     if (c === firstChoice) return { text: `${t('as_crop_rec', { crop: crop(c) })} ${t(cropNote(c))}`, action: { kind: 'section', id: 'summary' } };
     if (alt) return { text: `${t('as_crop_alt', { crop: crop(c), tag: t(alt.close ? 'altClose' : 'altLess').toLocaleLowerCase() })} ${t(cropNote(c))}`, action: { kind: 'section', id: 'options' } };
@@ -132,7 +134,7 @@ export function answer(question: string, ctx: FieldContext | null, t: T): Reply 
   if (top === 'plant' || top === 'why' || top === 'alternatives') {
     if (!ctx) return { text: t('as_noField'), action: { kind: 'find' } };
     if (top === 'why') {
-      return { text: t('as_why', { why: t(`why_${ctx.driver}` as Key), driver: t(`crit_${ctx.driver}` as Key) }), action: { kind: 'section', id: 'options' } };
+      return { text: t('as_why', { why: t(ctx.why), driver: t(`crit_${ctx.driver}` as Key) }), action: { kind: 'section', id: 'options' } };
     }
     if (top === 'alternatives') {
       const alts = ctx.alternatives.length ? t('as_alt', { list: ctx.alternatives.map((a) => crop(a.crop)).join(', ') }) : t('as_altNone');
@@ -140,7 +142,7 @@ export function answer(question: string, ctx: FieldContext | null, t: T): Reply 
       return { text: alts + out, action: { kind: 'section', id: 'summary' } };
     }
     const then = ctx.wheatNow ? t('heroThenChoice', { crop: crop(ctx.then).toLocaleLowerCase() }) : t('heroThenWheat');
-    return { text: t('as_plant', { y: ctx.harvestYear, crop: crop(ctx.crop), then, why: t(`why_${ctx.driver}` as Key) }), action: { kind: 'section', id: 'summary' } };
+    return { text: t('as_plant', { y: ctx.harvestYear, crop: crop(ctx.crop), then, why: t(ctx.why) }), action: { kind: 'section', id: 'summary' } };
   }
 
   return { text: t('as_unknown'), suggest: true };

@@ -8,6 +8,7 @@ import {
   type Decision, type FlipCell, type PriceRobustness, type RankedRotation, type RotationSummary, type Tercile, type Weights,
 } from '@/lib/economics';
 import type { DefaultsFile, DepthClass, DepthId, ResultsFile, Rotation, SiteIndex } from '@/lib/types';
+import type { Key } from '@/i18n';
 
 export type OptionStatus = 'recommended' | 'eligible' | 'blocked';
 
@@ -95,6 +96,36 @@ export function buildVerdict(
     nYears,
     nSequences: site.rotations.length * nYears,
   };
+}
+
+/**
+ * Why the suggested option is suggested, in a form the page can state as a fact.
+ * `ranked.driver` is only the criterion that adds most to the score; the option may still be
+ * far from the best on it (fallow under "protect my soil" is the barest option, yet soil adds
+ * most to its score). A superlative is therefore said only when the option really is first.
+ */
+export type Reason =
+  | { kind: 'only_eligible' }                          // the other options were blocked by a guardrail
+  | { kind: 'best_on'; criterion: keyof Weights }      // first of all three on the driving criterion
+  | { kind: 'best_overall' };                          // ahead on the weighted total, not on the driver
+
+/** `parts` are relative to the best of all three options, so the best one has exactly 1. */
+const FIRST = 0.999;
+
+export function reasonFor(v: Verdict): Reason | null {
+  const rec = v.recommended;
+  if (!rec) return null;
+  if (v.options.filter((o) => o.status !== 'blocked').length === 1) return { kind: 'only_eligible' };
+  const criterion = rec.ranked.driver;
+  return rec.ranked.parts[criterion] >= FIRST ? { kind: 'best_on', criterion } : { kind: 'best_overall' };
+}
+
+/** The sentence for `reasonFor`: one of the `why_*` strings; null when nothing is suggested. */
+export function whyKey(v: Verdict): Key | null {
+  const r = reasonFor(v);
+  if (!r) return null;
+  if (r.kind === 'only_eligible') return 'why_only';
+  return r.kind === 'best_on' ? (`why_${r.criterion}` as Key) : 'why_overall';
 }
 
 /** Median wheat yield of an option as a share of the median wheat yield after fallow (1 = the same). */

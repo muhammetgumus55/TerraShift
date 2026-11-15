@@ -188,3 +188,14 @@ Site canlıda: https://arksus.vercel.app (Vercel projesi `nobetsu`, kök `web/`;
 - [ ] Sitede görünen her yer: `appName`, `farmerName`, sayfa başlığı (`App.tsx`, `index.html`), paylaşım metni (`Result.tsx`), çiftçi SVG başlığı, hukuk metinleri. Haritada (Biar) `index.html` başlığı ve marka, `strings.ts` tanıtım ve "Pilot ilçe · Arksus".
 - [ ] İç adlar **değişmedi**: tarayıcı hafıza anahtarları (`nobetsu.v2`, `nobetsu.users`, `nobetsu.session`, `nobetsu.tkgm-limited`; değişirse kayıtlı cevaplar kaybolur), haritanın `/data/nobetsu` yolu ve `VITE_NOBETSU_DATA`, Python paketi.
 - [ ] Yeni adres: https://arksus.vercel.app (aynı Vercel projesi; eski nobetsu.vercel.app de çalışıyor).
+
+## 21. Öneri gerekçesi, gizlilik ve TKGM metinleri, ErrorBoundary (15 Kas, Gümüş — Gümüş'ün isteğiyle)
+
+Puanlar, `economics.ts`, sözleşme ve veri dosyaları değişmedi; sadece gösterim.
+
+- [ ] **Öneri altındaki "neden" cümlesi artık yalnızca doğruysa üstünlük bildiriyor.** Eskiden `why_${driver}` yazılıyordu; `driver` puana en çok katkı veren ölçüt, seçeneğin o ölçütte birinci olduğu anlamına gelmiyor (Karapınar + "Toprağım korunsun": nadas öneriliyor ve "en az bu sırada çıplak" deniyordu, oysa nadas en çıplak seçenek). Yeni: `domain/verdict.ts` → `reasonFor(verdict)` (`only_eligible` | `best_on` | `best_overall`) ve `whyKey(verdict)`. `best_on` sadece `ranked.parts[driver] ≥ 0,999` ise. `screens/Result.tsx` (Hero) ve `shell/Ask.tsx` + `domain/assistant.ts` (`FieldContext.why`) bunu kullanıyor. Test: `domain/verdict.test.ts` (13 ilçe × 3 derinlik × 5 öncelik), `domain/assistant.test.ts`.
+- [ ] `i18n/strings.ts`: yeni `why_only`, `why_only_more`, `why_overall`; `why_value` yeniden yazıldı ("Hesabımıza göre iki yılda en yüksek ürün değeri bu sırada çıkıyor; masraflar hesaba katılmadı."); `recOnly` silindi (tek seçenek kaldığında gerekçe cümlesi aynı şeyi söylüyor, alttaki kutu gösterilmiyor).
+- [ ] `heroPrivacy`: "yalnızca bu cihazda kalır" yanlıştı (giriş yapınca cevaplar hesaba gidiyor; konum harita, tapu ve hava servislerine sorgu olarak gidiyor). `screens/Welcome.tsx`: bu satıra telefonda sağ boşluk (köşedeki "Çiftçiye sor" düğmesinin altına girmesin).
+- [ ] TKGM: `tkgmBusyNote`, `tkgmLimit`, `tkgmBusySub` artık "yarın yeniden çalışır" demiyor (canlı sitede ilk sorguda 403 geliyor, §18).
+- [ ] Yeni `ui/ErrorBoundary.tsx`; `App.tsx`'te dört yerde: haritanın etrafında (`mapLoadFailed`), panel içeriğinin etrafında ("Bir şeyler ters gitti" kartı, **Tekrar dene** ve **Başka tarla seç**; adım değişince sıfırlanır), "Çiftçiye sor"un etrafında (hata olursa görünmez) ve en dışta son çare olarak. Yeni anahtarlar: `mapLoadFailed`, `renderFailed`.
+- Kalan bilinen uyumsuzluk: `why_only` "alt sınırlar" diyor, sayfanın geri kalanı "verimlilik eşikleri". Terimi tek kelimeye indirmek ayrı bir iş (denetim raporu, metin tablosu 16. satır).
