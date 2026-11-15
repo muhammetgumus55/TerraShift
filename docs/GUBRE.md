@@ -125,7 +125,7 @@ const plan: FertPlan = recommend(fert, {
 
 ## 9. Nasıl ekilir (15 Kas)
 
-Gübre kartının altında ikinci bir kart: **ne zaman, dekara ne kadar tohum, ne derine, hangi sıra aralığıyla**. Kurallar `engine/config/sowing.yaml` → `web/public/data/sowing.json`, hesap `web/src/lib/sowing.ts` (`sowingPlan`, `seedKgPerDa`, `windowStatus`), kart `web/src/screens/result/Sowing.tsx`. Araştırma: `reports/İç Anadolu gübre ekim toprak sağlığı.md`.
+Gübre kartının altında ikinci bir kart: **ne zaman, dekara ne kadar tohum, ne derine, hangi sıra aralığıyla**. Kurallar `engine/config/sowing.yaml` → `web/public/data/sowing.json`, hesap `web/src/lib/sowing.ts` (`sowingPlan`, `seedKgPerDa`, `windowStatus`), kart `web/src/screens/result/Sowing.tsx`. Araştırma: `docs/research/fertilizer-sowing-soil-health-report.md`.
 
 | Ne | Kural | Kaynak (rozet) |
 |---|---|---|

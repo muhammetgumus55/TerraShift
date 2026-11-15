@@ -4,7 +4,7 @@
 // weekly ledger only when the 3D field view opens.
 
 import type {
-  AgentFile, DefaultsFile, FertilizerFile, LedgerFile, ResultsFile, SiteIndex, SmapFile, SoilHealthFile, SowingFile, ValidationFile,
+  AgentFile, DefaultsFile, ExplainFile, FertilizerFile, LedgerFile, ResultsFile, SiteIndex, SmapFile, SoilHealthFile, SowingFile, ValidationFile,
 } from '@/lib/types';
 
 const base = `${import.meta.env.BASE_URL}data`;
@@ -43,6 +43,11 @@ export const loadSmap = (locationId: string) => getJSON<SmapFile>(`smap/${locati
 
 /** AI commentary exists only after `python -m nobetsu.agent`; absent is normal. */
 export const loadAgent = (locationId: string) => getJSON<AgentFile>(`agent/${locationId}.json`).catch(() => null);
+
+/** Why-this-crop explanations (python -m nobetsu.explain); absent is normal. */
+export const loadExplain = (locationId: string) => getJSON<ExplainFile>(`explain/${locationId}.json`).catch(() => null);
+/** Public URL of a file under public/data (audio clips referenced from the data files). */
+export const dataUrl = (path: string) => `${base}/${path}`;
 
 export const loadLedger = (locationId: string) => getJSON<LedgerFile>(`ledger/${locationId}.json`);
 export const loadFertilizer = () => getJSON<FertilizerFile>('fertilizer.json');

@@ -15,7 +15,7 @@ CHECK_ORDER = ["mass_balance", "et0_fao56_ex18", "pse_literature", "trial_ratio"
 
 
 def schema_for(rel: Path) -> str:
-    return rel.parent.name if rel.parent.name in ("results", "ledger", "smap", "agent") else rel.stem
+    return rel.parent.name if rel.parent.name in ("results", "ledger", "smap", "agent", "explain") else rel.stem
 
 
 def load(path: Path) -> dict:

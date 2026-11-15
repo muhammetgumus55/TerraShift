@@ -3,7 +3,6 @@ import { useT } from '@/i18n';
 import { useStore } from '@/state/store';
 import { withMap } from '@/map/api';
 import { Button } from '@/ui/kit';
-import { Farmer } from '@/ui/farmer/Farmer';
 
 /** Opening view: the country from above, one question, one button. */
 export function Welcome() {
@@ -20,12 +19,6 @@ export function Welcome() {
     <div className="pointer-events-none absolute inset-0 z-10 flex flex-col justify-end md:justify-center md:bg-gradient-to-r md:from-[#07140e]/92 md:via-[#07140e]/55 md:to-transparent">
       {/* On a phone the words sit in the lower half, on their own dark ground, and the country stays visible above. */}
       <div className="pointer-events-auto w-full max-w-2xl animate-rise bg-gradient-to-t from-[#07140e] via-[#07140e]/93 to-transparent px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-20 text-white md:bg-none md:p-14">
-        {/* The guide says hello: a speech bubble beside him, pointing at him. */}
-        <div className="mb-3 flex items-end gap-3 md:mb-5">
-          <Farmer mood="waving" size={64} title={t('farmerName')} className="shrink-0 drop-shadow-[0_4px_10px_rgba(0,0,0,0.35)] md:hidden" />
-          <Farmer mood="waving" size={112} title={t('farmerName')} className="hidden shrink-0 drop-shadow-[0_4px_10px_rgba(0,0,0,0.35)] md:block" />
-          <p className="relative mb-3 rounded-2xl rounded-bl-sm bg-white px-3.5 py-2 text-[15px] font-bold leading-snug text-ink shadow-float sm:text-base">{t('farmerHello')}</p>
-        </div>
         <p className="text-xs font-bold uppercase tracking-[0.14em] text-gold sm:text-sm">{t('kicker')}</p>
         <h1 className="mt-2 text-[2.15rem] font-black leading-[1.05] sm:text-6xl md:mt-3">{t('heroTitle')}</h1>
         <p className="mt-3 max-w-xl text-base leading-snug text-white/90 sm:text-xl sm:leading-relaxed md:mt-4">{t('heroBody')}</p>

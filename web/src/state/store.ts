@@ -8,7 +8,7 @@ import type { Core } from '@/data/api';
 import type { Parcel } from '@/domain/field';
 import { EMPTY_HISTORY, type History, type PastCrop } from '@/domain/history';
 import type { PriorityId } from '@/domain/priorities';
-import { DEFAULT_PREFS, normalizePrefs, type Prefs } from '@/domain/sections';
+import { DEFAULT_PREFS, normalizePrefs, type Prefs, type SectionId } from '@/domain/sections';
 import { currentAccount, logout, savePrefs, type Account } from '@/domain/auth';
 
 export type Lang = 'tr' | 'en';
@@ -53,6 +53,9 @@ interface State {
   /** Device-only trial account (domain/auth.ts); null when signed out. */
   user: string | null;
   profileOpen: boolean;
+  /** Result section on screen; the farmer's answers can open one. */
+  section: SectionId;
+  askOpen: boolean;
 
   setLang(lang: Lang): void;
   setCore(core: Core): void;
@@ -69,7 +72,15 @@ interface State {
   signedIn(a: Account): void;
   signOut(): void;
   setProfileOpen(open: boolean): void;
+  setSection(id: SectionId): void;
+  setAskOpen(open: boolean): void;
   reset(): void;
+}
+
+/** Same field = the new selection shares at least one parcel with the current one. */
+export function sameField(prev: Parcel[], next: Parcel[]): boolean {
+  const ids = new Set(prev.map((p) => p.id));
+  return next.some((p) => ids.has(p.id));
 }
 
 const KEY = 'nobetsu.v2';
@@ -113,14 +124,21 @@ export const useStore = create<State>((set) => ({
   prefs: account?.prefs ?? normalizePrefs(saved.prefs ?? DEFAULT_PREFS),
   user: account?.username ?? null,
   profileOpen: false,
+  section: 'summary',
+  askOpen: false,
 
   setLang: (lang) => set({ lang }),
   setCore: (core) => set({ core, coreError: false }),
   setCoreError: () => set({ coreError: true }),
-  go: (step) => set((s) => ({ step, sheetOpen: true, sim: false, findMode: step === 'find' ? 'menu' : s.findMode })),
+  // A new analysis opens on the suggestion, not on whatever section was last read.
+  go: (step) => set((s) => ({ step, sheetOpen: true, sim: false, findMode: step === 'find' ? 'menu' : s.findMode, section: step === 'analyzing' ? 'summary' : s.section })),
   setQuestion: (question) => set({ question }),
   setFindMode: (findMode) => set({ findMode }),
-  setField: (parcels, locationId, distanceKm) => set({ parcels, locationId, distanceKm }),
+  // A different field starts with blank questions; adding or removing a parcel of the same field keeps them.
+  setField: (parcels, locationId, distanceKm) => set((s) => (
+    parcels.length && !sameField(s.parcels, parcels)
+      ? { parcels, locationId, distanceKm, answers: EMPTY_ANSWERS, question: 0 }
+      : { parcels, locationId, distanceKm })),
   answer: (key, value) => set((s) => ({ answers: { ...s.answers, [key]: value } })),
   setHistory: (i, crop) => set((s) => {
     const history = [...s.answers.history] as History;
@@ -135,6 +153,8 @@ export const useStore = create<State>((set) => ({
   signedIn: (a) => set({ user: a.username, prefs: a.prefs }),
   signOut: () => { logout(); set({ user: null }); },
   setProfileOpen: (profileOpen) => set({ profileOpen }),
+  setSection: (section) => set({ section }),
+  setAskOpen: (askOpen) => set({ askOpen }),
   reset: () => set({ step: 'welcome', question: 0, findMode: 'menu', sim: false, parcels: [], locationId: null, distanceKm: null, answers: EMPTY_ANSWERS }),
 }));
 

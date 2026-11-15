@@ -1,6 +1,6 @@
 # Arksus — 5 dakikada proje
 
-> Bu dosya herkes için. Yazılım bilmesen de anlaşılır olsun diye yazıldı. Ayrıntı `PLAN_MVP.md`'de.
+> Bu dosya herkes için; yazılım bilmesen de anlaşılır olsun diye yazıldı. Ayrıntı `PLAN_MVP.md`'de, İngilizce tanıtım `../README.md`'de, tüm belgelerin listesi `README.md`'de.
 
 ## Tek cümlede
 
@@ -10,7 +10,7 @@ Yarışma: NASA Space Apps 2026 — *Field Shift: Adapting Farms with NASA Data*
 
 ## Sorun ne?
 
-Orta Anadolu'da (Konya, Kayseri) kuru tarımda çiftçi buğdaydan sonra tarlayı genelde **bir yıl boş bırakır (nadas)**.
+İç Anadolu'da kuru tarımda çiftçi buğdaydan sonra tarlayı genelde **bir yıl boş bırakır (nadas)**.
 
 - **İyi tarafı:** Boş tarla yağmuru toprağın içinde biriktirir, **kumbara gibi**. Ertesi yıl ekilen buğday bu suyu kullanır, kurak yılda daha güvenli olur.
 - **Kötü tarafı 1 — para:** Nadas yılı hiç ürün yok, gelir yok. Tek yıla bakınca hep zarar gibi görünür.
@@ -35,7 +35,11 @@ Site üç seçeneği yan yana gösterir ve önceliklere göre **bu arazi için e
 2. **Nohut → Buğday**
 3. **Mercimek → Buğday**
 
-Her biri için: buğday ekiminde toprakta ne kadar su kaldı · tarla kaç gün çıplak kaldı, kaçı rüzgârlı ve kuruydu · buğday verimi (su yeterli olsaydı alınacak verimin yüzdesi) · iki yılda kaç hasat · öneri, gerekçesi ve sonuçların yakın olup olmadığı · hangi durumda hangisi öne geçiyor (kurak/normal/ıslak yıl × toprak derinliği) · neden bu seçenek, kanıtı ne, neyi bilmiyoruz.
+Her biri için şunlar gösterilir: buğday ekiminde toprakta ne kadar su kaldı · tarla kaç gün çıplak kaldı, kaçı rüzgârlı ve kuruydu · buğday verimi (su yeterli olsaydı alınacak verimin yüzdesi) · iki yılda kaç hasat · öneri, gerekçesi ve sonuçların yakın olup olmadığı · hangi durumda hangisi öne geçiyor (kurak/normal/ıslak yıl × toprak derinliği) · neden bu seçenek, kanıtı ne, neyi bilmiyoruz.
+
+**Neden bu ürün?** Önerilen seçeneğin neden öne çıktığı kısa, sade cümlelerle yazılır. Bu cümleler sadece sitenin kendi sayılarından üretilir. Çiftçi maskotu bu açıklamayı Türkçe ya da İngilizce sesli okur; ses dosyaları ücretsiz, yerel bir seslendirme aracıyla (Piper) önceden hazırlanır.
+
+Bunların yanında gübre planı (TAGEM toprak analizi tabloları), ekim önerisi (zaman, tohum miktarı, derinlik) ve toprak koruma uygulamaları da gösterilir. Ayrıntı: `GUBRE.md`.
 
 **Tek bir yıl değil, geçmiş 24 yılın her biri için ayrı ayrı hesaplıyoruz** (2001–2024 başlangıçlı). Böylece "ortalama" değil, **aralık** görünür: kötü yılda ne olur, iyi yılda ne olur.
 
@@ -53,14 +57,23 @@ rüzgâr, güneş)       yağmur girer, buharlaşma    yüzde kaçı?"          
 - **1–3. adımlar** bilgisayarda bir kez çalışır (Python), sonuçları dosyaya yazar.
 - **4. adım** sitede çalışır. Çiftçi öncelik kaydırıcılarını değiştirdiği an öneri yeniden hesaplanır. Fiyat ve destek sadece arka planda kullanılır; ekranda para yok. Sunucu yok, veritabanı yok; site çok basit ve sağlam.
 
-Kullandığımız NASA verileri: **NASA POWER** (hava, ana veri), **NASA GPM IMERG** (ikinci uydu yağış tahmini, kontrol için), **NASA SMAP** (toprak nemi, uydu; istendi, bekleniyor), **MODIS NDVI** (Ömer çekiyor), genişletmede **GRACE** (havzadaki toplam su kaybı). Toprak özellikleri için **SoilGrids** (ISRIC).
+Kullandığımız veriler:
+
+| Veri | Ne için |
+|---|---|
+| **NASA POWER** | günlük hava, motorun ana verisi; yağış en yakın istasyonun 30 yıllık normaline göre düzeltilir |
+| **NASA GPM IMERG** | ikinci uydu yağış tahmini, yağışı kontrol için |
+| **NASA MERRA-2** | toprak nemi; modelin toprak suyunu kontrol için (NASA SMAP verisi gelmediği için onun yerine) |
+| **NASA MODIS NDVI** | bitkinin yeşerme takvimi; sulanan tarlaları ayıklamak için (13 noktadan 9'u sulu tarlaya düşüyordu, kuru tarlaya taşındı) |
+| **SoilGrids** (ISRIC) | toprak dokusu ve taşlılık |
+| **ESA WorldCover** | noktanın gerçekten tarla olduğunu kontrol için |
 
 ## Ne DEĞİL?
 
 - Senin tarlanın kesin verim tahmini değil → "bölgedeki tipik bir tarla, geçmiş 24 yılın iklimi".
-- Fiyat tahmini değil → fiyatı çiftçi girer.
+- Fiyat tahmini değil → fiyat ve destek sadece arka planda, hangi seçeneğin daha çok kazandırdığını tartmak için kullanılır; ekranda para yok.
 - Gübre danışmanı değil → fosfor, potasyum gibi şeyler uydudan ölçülemez, toprak analizi gerekir; bunu açıkça yazıyoruz.
-- "Şunu ek" diyen bir sistem değil → seçenekleri dürüstçe gösterir, kararı çiftçi ve yerel uzman verir.
+- Son sözü söyleyen bir sistem değil → önceliklere göre en uygun seçeneği, gerekçesini ve engellenen seçenekleri dürüstçe gösterir; kararı çiftçi ve yerel uzman verir.
 
 ## Kim ne yapıyor?
 
@@ -68,8 +81,9 @@ Kullandığımız NASA verileri: **NASA POWER** (hava, ana veri), **NASA GPM IME
 |---|---|---|
 | **Muhammet** | Araştırma, doğrulama, sunum | Fiyat, maliyet, destek, verim, ekim tarihlerini resmi kaynaklardan bulur; strateji metinlerini yazar; slayt, video, proje sayfası, teslim |
 | **İsmail** | Web sitesi | Kullanıcının gördüğü her şey: kartlar, grafikler, kaydırıcılar, telefon uyumu |
-| **Ömer** *(geçici)* | Motor (Rol A) | Toprak su hesabını yapan Python kodu: "her gün toprakta ne kadar su var, bitki ne kadar zorlandı" |
-| **Gümüş** *(geçici)* | Veri ve bağlantı (Rol B) | NASA verisini indirir, motorun çıktısını siteye uygun dosyalara çevirir, karar (öneri) modülü, repo ve yayın |
+| **Ömer** | Motor (Rol A) | Toprak su hesabını yapan Python kodu: "her gün toprakta ne kadar su var, bitki ne kadar zorlandı" |
+| **Gümüş** | Veri ve bağlantı (Rol B) | NASA verisini indirir, motorun çıktısını siteye uygun dosyalara çevirir, karar (öneri) modülü, repo ve yayın |
+| **Biar** | 3B harita | Türkiye'nin üç boyutlu arazi haritası; ilçe, tarla ve parsel seçimi |
 
 **Herkes nasıl birbirini beklemeden çalışıyor?**
 
@@ -89,13 +103,15 @@ Muhammet ──(rakamlar, metinler)──► Gümüş ──(hava verisi)──�
 
 ## Zaman çizelgesi (T0 = Cumartesi 15:00)
 
+> Yarışma sırasında kullanılan plan; kayıt için duruyor.
+
 | Saat | Ne olmalı |
 |---|---|
 | 16:00 (M0) | Repo, sözleşme, sahte veriler hazır; boş site yayında |
 | 19:00 (M1) | Her parça tek başına çalışıyor |
 | 00:00 (M2) | Gerçek NASA verisiyle uçtan uca çalışıyor → `v0.1` (güvenlik ağı) |
 | 05:00 (M3) | MVP tamam → `v0.2` (demo sürümü) |
-| 05:00–10:00 | Zaman kalırsa ekstralar (SMAP karşılaştırması, kurak/sıcak senaryolar, Türkçe dil...) |
+| 05:00–10:00 | Zaman kalırsa ekstralar (toprak nemi karşılaştırması, kurak/sıcak senaryolar, Türkçe dil...) |
 | 10:00 | Özellik dondurma; sadece hata düzeltme |
 | 10:00–13:30 | Video, slayt, proje sayfası, teslim |
 
@@ -114,3 +130,5 @@ Muhammet ──(rakamlar, metinler)──► Gümüş ──(hava verisi)──�
 | Sözleşme | Dosyaların ve alanların adları; herkesin kodu buna uyar |
 | Branch / merge | Herkesin kendi kopyası / kopyaları ana dala birleştirmek |
 | Milestone | Kontrol noktası; o saatte belli şeyler çalışıyor olmalı |
+| NDVI | Uydudan ölçülen bitki yeşilliği; 0'a yakın çıplak toprak, 1'e yakın gür bitki |
+| Nadas etkinliği | Nadas yılında düşen yağmurun yüzde kaçının toprakta kaldığı |

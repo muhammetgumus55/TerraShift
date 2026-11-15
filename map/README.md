@@ -33,8 +33,8 @@ npm run data         # rebuild public/data/{provinces,islands}.json from scripts
 - `src/engine/Overlay.ts`: vector layers are rasterised into a per-tile canvas and
   blended in the terrain shader, so they drape exactly at any exaggeration.
 - `src/engine/MapCamera.ts`: pan and zoom anchored to the terrain point under the cursor.
-- `src/pilots.ts`: loads Arksus data and calls its `economics.ts`; money and kg/da
-  are hidden while cost or Ym is still `null`, as the project's rules require.
+- `src/pilots.ts`: loads Arksus data and calls its `economics.ts`; money is never shown, and kg/da
+  are hidden while Ym is still `null`, as the project's rules require.
 - `src/strings.ts`: every UI string in Turkish and English.
 
 Public Overpass instances rate-limit hard and are sometimes at capacity; field
