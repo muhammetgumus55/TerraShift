@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nobetsu/explain.schema.json",
+  "title": "explain",
+  "description": "15 Nov: why-this-crop explanations (nobetsu.explain). web/public/data/explain/{location_id}.json. explanations[depth][rotation] = facts + Turkish and English text; audio is a path under public/data (nobetsu.tts).",
+  "type": "object",
+  "$defs": {
+    "text": {
+      "type": "object",
+      "properties": {
+        "text": {"type": "string"},
+        "sentences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {"text": {"type": "string"}, "fact_ids": {"type": "array", "items": {"type": "string"}}},
+            "required": ["text", "fact_ids"]
+          }
+        },
+        "source": {"enum": ["model", "template"]},
+        "tries": {"type": "integer", "minimum": 0},
+        "audio": {"type": "string", "pattern": "^audio/"},
+        "model_problems": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": ["text", "sentences", "source", "tries"]
+    },
+    "entry": {
+      "type": "object",
+      "properties": {
+        "facts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {"type": "string"},
+              "numbers": {"type": "array", "items": {"type": "integer"}},
+              "tr": {"type": "string"},
+              "en": {"type": "string"}
+            },
+            "required": ["id", "numbers", "tr", "en"]
+          }
+        },
+        "tr": {"$ref": "#/$defs/text"},
+        "en": {"$ref": "#/$defs/text"}
+      },
+      "required": ["facts", "tr", "en"]
+    }
+  },
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "mock": {"type": "boolean"},
+    "generated_at": {"type": "string"},
+    "location_id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "model": {"type": ["string", "null"]},
+    "type": {"const": "model"},
+    "explanations": {
+      "type": "object",
+      "additionalProperties": {"type": "object", "additionalProperties": {"$ref": "#/$defs/entry"}}
+    }
+  },
+  "required": ["schema_version", "mock", "generated_at", "location_id", "model", "type", "explanations"]
+}
