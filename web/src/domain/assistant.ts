@@ -37,10 +37,11 @@ type Topic =
   | 'plant' | 'why' | 'alternatives' | 'data' | 'trust' | 'settings' | 'account' | 'irrigation'
   | 'fertilizer' | 'sowing' | 'field' | 'weather' | 'hello' | 'thanks';
 
+// Order matters on a tie: the more specific topic comes first ("başka ne ekebilirim" is about alternatives).
 const TOPICS: Record<Topic, string[]> = {
-  plant: ['ne ek', 'ne dik', 'hangi urun', 'oner', 'tavsiye', 'ekeyim', 'ekmeli', 'ekecegim', 'what should', 'what to plant', 'which crop', 'recommend', 'suggest'],
   why: ['neden', 'nicin', 'niye', 'sebep', 'why', 'reason', 'because'],
   alternatives: ['baska', 'alternatif', 'diger', 'secenek', 'else', 'other', 'alternative', 'option'],
+  plant: ['ne ek', 'ne dik', 'hangi urun', 'oner', 'tavsiye', 'ekeyim', 'ekmeli', 'ekecegim', 'what should', 'what to plant', 'which crop', 'recommend', 'suggest'],
   data: ['veri', 'kaynak', 'nereden', 'nasil hesap', 'nasil calis', 'model', 'nasa', 'uydu', 'data', 'source', 'how does', 'how do you', 'satellite'],
   trust: ['dogru mu', 'guven', 'emin', 'yanlis', 'hata', 'accurate', 'trust', 'sure', 'reliable', 'wrong'],
   settings: ['basit', 'gelismis', 'ayar', 'mod', 'bolum', 'simple', 'advanced', 'setting', 'section'],
@@ -104,6 +105,10 @@ export function answer(question: string, ctx: FieldContext | null, t: T): Reply 
     const alt = ctx.alternatives.find((a) => a.crop === c);
     const blocked = ctx.blocked.find((b) => b.crop === c);
     const firstChoice = ctx.wheatNow ? ctx.then : ctx.crop;
+    // "Neden nohut?" about the suggested crop asks for the reason, not the name again.
+    if (c === firstChoice && top === 'why') {
+      return { text: `${t('as_crop_rec', { crop: crop(c) })} ${t('as_why', { why: t(`why_${ctx.driver}` as Key), driver: t(`crit_${ctx.driver}` as Key) })}`, action: { kind: 'section', id: 'options' } };
+    }
     if (c === firstChoice) return { text: `${t('as_crop_rec', { crop: crop(c) })} ${t(cropNote(c))}`, action: { kind: 'section', id: 'summary' } };
     if (alt) return { text: `${t('as_crop_alt', { crop: crop(c), tag: t(alt.close ? 'altClose' : 'altLess').toLocaleLowerCase() })} ${t(cropNote(c))}`, action: { kind: 'section', id: 'options' } };
     if (blocked) return { text: t('as_crop_blocked', { crop: crop(c), reason: blocked.reasons.join(' ') }), action: { kind: 'section', id: 'options' } };

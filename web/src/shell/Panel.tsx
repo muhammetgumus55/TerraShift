@@ -62,7 +62,7 @@ export function Panel({ children }: { children: React.ReactNode }) {
         ))}
       </ol>
 
-      <div ref={scroller} className={cn('thin-scroll min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]', wide && 'md:px-6', wide && !open && 'hidden')}>
+      <div ref={scroller} className={cn('thin-scroll min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pb-[max(6rem,env(safe-area-inset-bottom))]', wide && 'md:px-6', wide && !open && 'hidden')}>
         {/* Questions read best in a column; the result uses the width for its menu. */}
         <div className={cn('mx-auto w-full', !wide ? '' : step === 'result' ? 'max-w-6xl' : 'max-w-2xl')}>{children}</div>
       </div>

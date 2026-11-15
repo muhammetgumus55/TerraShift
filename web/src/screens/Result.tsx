@@ -147,18 +147,19 @@ interface Section { id: SectionId; key: SectionKey; icon: typeof Star; body: Rea
  */
 function Sections({ sections }: { sections: Section[] }) {
   const { t } = useT();
-  const [active, setActive] = useState<SectionId>(sections[0].id);
+  const active = useStore((s) => s.section);
+  const setActive = useStore((s) => s.setSection);
   const nav = useRef<HTMLElement>(null);
   const i = Math.max(0, sections.findIndex((s) => s.id === active));
   const current = sections[i];
   const next = sections[i + 1];
 
-  const open = (id: SectionId) => {
-    setActive(id);
+  const open = (id: SectionId) => setActive(id);
+  // Whoever opens a section (the menu or the farmer's answer): back to the top, chip in view on a phone.
+  useEffect(() => {
     nav.current?.parentElement?.closest('.thin-scroll')?.scrollTo({ top: 0 });
-    // keep the chosen chip in view on a phone
-    nav.current?.querySelector(`[data-sec="${id}"]`)?.scrollIntoView({ block: 'nearest', inline: 'center' });
-  };
+    nav.current?.querySelector(`[data-sec="${current.id}"]`)?.scrollIntoView({ block: 'nearest', inline: 'center' });
+  }, [current.id]);
 
   return (
     <div className="grid grid-cols-[minmax(0,1fr)] gap-3 md:grid-cols-[14rem_minmax(0,1fr)] md:items-start md:gap-6">
