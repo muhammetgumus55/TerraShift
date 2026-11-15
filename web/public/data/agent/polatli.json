@@ -184,8 +184,10 @@
   }
  ],
  "guards": {
-  "passed": true,
-  "problems": [],
+  "passed": false,
+  "problems": [
+   "15 Kas insan incelemesi / human review: anlam hataları (ör. baklagil için 'nötrofil bitki', nadasın suyu azalttığı, '%50: 42' gibi yanlış okunan sayılar); sitede gösterilmiyor. Yerine öneri kartındaki 'Neden …?' açıklaması (nobetsu.explain) kullanılıyor."
+  ],
   "rewrites": 0
  },
  "disclaimer": {
